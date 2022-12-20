@@ -16,6 +16,8 @@
 		8C19AC642952674200AC572F /* Official_UT_Fitness_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19AC632952674200AC572F /* Official_UT_Fitness_AppTests.swift */; };
 		8C19AC6E2952674200AC572F /* Official_UT_Fitness_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19AC6D2952674200AC572F /* Official_UT_Fitness_AppUITests.swift */; };
 		8C19AC702952674200AC572F /* Official_UT_Fitness_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19AC6F2952674200AC572F /* Official_UT_Fitness_AppUITestsLaunchTests.swift */; };
+		8C19AC8029526A2600AC572F /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19AC7F29526A2600AC572F /* Exercise.swift */; };
+		8C19AC8229526A4500AC572F /* SecondsToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19AC8129526A4500AC572F /* SecondsToString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		8C19AC692952674200AC572F /* Official_UT_Fitness_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Official_UT_Fitness_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C19AC6D2952674200AC572F /* Official_UT_Fitness_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Official_UT_Fitness_AppUITests.swift; sourceTree = "<group>"; };
 		8C19AC6F2952674200AC572F /* Official_UT_Fitness_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Official_UT_Fitness_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8C19AC7F29526A2600AC572F /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		8C19AC8129526A4500AC572F /* SecondsToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondsToString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 		8C19AC7C2952692100AC572F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8C19AC7F29526A2600AC572F /* Exercise.swift */,
+				8C19AC8129526A4500AC572F /* SecondsToString.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -283,7 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C19AC512952674100AC572F /* ViewController.swift in Sources */,
+				8C19AC8029526A2600AC572F /* Exercise.swift in Sources */,
 				8C19AC4D2952674100AC572F /* AppDelegate.swift in Sources */,
+				8C19AC8229526A4500AC572F /* SecondsToString.swift in Sources */,
 				8C19AC4F2952674100AC572F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
