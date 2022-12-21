@@ -91,6 +91,7 @@ class TrainingSession: UIViewController {
         } else {
             timeLabel.text = "00:00"
             timer.invalidate()
+            self.performSegue(withIdentifier: "goToRestScreen", sender: self)
         }
     }
     

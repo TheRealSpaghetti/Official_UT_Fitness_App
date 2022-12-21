@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,9 +11,9 @@
         <!--Home Page-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomePage" customModule="UT_Fit_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomePage" customModule="Official_UT_Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Q8-sj-ovt">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="869"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0F0-S2-2nc">
@@ -55,7 +54,7 @@
                     </view>
                     <connections>
                         <segue destination="lkq-xS-Cin" kind="presentation" identifier="goToTimer" modalPresentationStyle="fullScreen" id="Jcy-bm-wlm"/>
-                        <segue destination="ayK-oA-Hk9" kind="presentation" identifier="goToNutrition" customClass="SegueFromLeft" customModule="UT_Fit_App" customModuleProvider="target" modalPresentationStyle="fullScreen" id="bP4-OR-00x"/>
+                        <segue destination="ayK-oA-Hk9" kind="presentation" identifier="goToNutrition" customClass="SegueFromLeft" customModule="Official_UT_Fitness_App" customModuleProvider="target" modalPresentationStyle="fullScreen" id="bP4-OR-00x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -76,26 +75,26 @@
         <!--Training Session-->
         <scene sceneID="QA2-bS-5c1">
             <objects>
-                <viewController id="lkq-xS-Cin" customClass="TrainingSession" customModule="UT_Fit_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lkq-xS-Cin" customClass="TrainingSession" customModule="Official_UT_Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A2l-zF-O8p">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UMc-6Y-FEk">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ojb-Ng-AOD" userLabel="Display Info">
-                                <rect key="frame" x="76" y="200" width="277" height="128"/>
+                                <rect key="frame" x="76" y="200" width="224" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Bench Press" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdC-Ia-Qoa">
-                                        <rect key="frame" x="48" y="-18" width="181" height="162.33333333333337"/>
+                                        <rect key="frame" x="21.666666666666671" y="-18" width="181" height="162.33333333333337"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Exercise #1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myi-lx-RkV">
-                                        <rect key="frame" x="95.666666666666657" y="8" width="86" height="21"/>
+                                        <rect key="frame" x="69" y="8" width="86" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
                                         <nil key="highlightedColor"/>
@@ -137,7 +136,7 @@
                         <outlet property="backgroundGif" destination="UMc-6Y-FEk" id="Pp4-0s-tDm"/>
                         <outlet property="exerciseLabel" destination="KdC-Ia-Qoa" id="L2c-xE-qfj"/>
                         <segue destination="68h-tH-YS6" kind="presentation" identifier="goToRestScreen" modalPresentationStyle="fullScreen" id="H0h-lN-ADb"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="&quot;goToHomeScreen&quot;" customClass="SegueFromRight" customModule="UT_Fit_App" customModuleProvider="target" id="1rd-av-Wan"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="&quot;goToHomeScreen&quot;" customClass="SegueFromRight" customModule="Official_UT_Fitness_App" customModuleProvider="target" id="1rd-av-Wan"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fn-rV-g4l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -157,9 +156,9 @@
         <!--Rest Screen-->
         <scene sceneID="lpI-Tv-8z3">
             <objects>
-                <viewController id="68h-tH-YS6" customClass="RestScreen" customModule="UT_Fit_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="68h-tH-YS6" customClass="RestScreen" customModule="Official_UT_Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LMZ-mv-c0b">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Take it easy!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTK-eP-fK6">
@@ -183,7 +182,7 @@
             <objects>
                 <viewController id="puk-MK-4jY" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SVp-gR-zzF">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="iF4-y5-nF0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -196,46 +195,20 @@
         <!--Nutrition Stats-->
         <scene sceneID="vzq-aB-LJV">
             <objects>
-                <viewController id="ayK-oA-Hk9" customClass="NutritionStats" customModule="UT_Fit_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ayK-oA-Hk9" customClass="NutritionStats" customModule="Official_UT_Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vfg-pa-O4h">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daily Caloric Intake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMO-Ug-qYc">
-                                <rect key="frame" x="66" y="125" width="247" height="36"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FR9-rc-VzS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsp-4r-Db2">
-                                <rect key="frame" x="66" y="191" width="161" height="145"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Daily
-Recommended Protein</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zkm-n9-wpH">
                                 <rect key="frame" x="66" y="527" width="122" height="106"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Daily
 Recommended Fats</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmH-FL-Tq9">
-                                <rect key="frame" x="66" y="169" width="133" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEd-wN-3kT">
-                                <rect key="frame" x="66" y="303" width="133" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -254,15 +227,25 @@ Recommended Fats</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svO-EA-a40">
-                                <rect key="frame" x="66" y="369" width="133" height="106"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmH-FL-Tq9">
+                                <rect key="frame" x="249" y="249" width="133" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Daily
-Recommended Carbohydrate</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEd-wN-3kT">
+                                <rect key="frame" x="66" y="302" width="133" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3cN-3v-acW" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="62" y="415" width="250" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hO1-MZ-KLa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -275,8 +258,9 @@ Recommended Carbohydrate</string>
                         <outlet property="calorieLabel" destination="hmH-FL-Tq9" id="Dbq-gP-bA1"/>
                         <outlet property="carbLabel" destination="AXG-Tt-vNq" id="L1i-eg-UQJ"/>
                         <outlet property="fatsLabel" destination="kMr-C4-q5C" id="Xci-9O-kJG"/>
+                        <outlet property="pieView" destination="3cN-3v-acW" id="2XV-mh-ADv"/>
                         <outlet property="proteinLabel" destination="TEd-wN-3kT" id="bQl-CK-ylh"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToHome" customClass="SegueFromRight" customModule="UT_Fit_App" customModuleProvider="target" modalPresentationStyle="fullScreen" id="mci-Yr-EuR"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToHome" customClass="SegueFromRight" customModule="Official_UT_Fitness_App" customModuleProvider="target" modalPresentationStyle="fullScreen" id="mci-Yr-EuR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ttN-fv-lY5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -286,11 +270,11 @@ Recommended Carbohydrate</string>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-949" y="138"/>
+            <point key="canvasLocation" x="-898.39999999999998" y="132.26600985221674"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1rd-av-Wan"/>
+        <segue reference="mci-Yr-EuR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="secondarySystemBackgroundColor">
