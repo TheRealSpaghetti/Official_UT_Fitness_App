@@ -10,8 +10,9 @@ import Foundation
 
 struct NutrientAnalysis{
     
-    var height: Double      //height in centimeters
-    var weight: Double      //weight in kilograms
+    var height: Double       //height in centimeters
+    var weight: Double       //weight in kilograms
+    //var experience: Int    //experiece in weightlifting
     var gain: Bool
     var lose: Bool
     var maintain: Bool
@@ -105,7 +106,6 @@ struct NutrientAnalysis{
             
             return (BMR * activityModifier) + goalModifier
         }
- 
     }
     
     func getBMI() -> Double {

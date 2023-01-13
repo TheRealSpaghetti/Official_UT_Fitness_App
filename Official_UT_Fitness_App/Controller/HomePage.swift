@@ -1,16 +1,14 @@
-//
-//  ViewController.swift
-//  BMI Calculator
-//
-//  Created by Angela Yu on 21/08/2019.
-//  Copyright © 2019 Angela Yu. All rights reserved.
-//
 
 import UIKit
+import Firebase
 
 class HomePage: UIViewController {
 
     override func viewDidLoad() {
+        
+        //Login and Register
+        //save user defaults to skip
+    
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
@@ -26,6 +24,11 @@ class HomePage: UIViewController {
         self.performSegue(withIdentifier: "goToNutrition", sender: self)
     }
     @IBAction func calculatePressed(_ sender: UIButton) {
+        Auth.auth().createUser(withEmail: "1@2.com", password: "123456"){ authResult, error in
+            
+            print("noice one")
+        }
+        
         
         self.performSegue(withIdentifier: "goToTimer", sender: self)
     }
