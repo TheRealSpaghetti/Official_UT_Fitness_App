@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 window.rootViewController = home
                
             } else{
-                let home = storyboard.instantiateViewController(withIdentifier: "LoginPage") as UIViewController
+                let home = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
                 
                 window.rootViewController = home
 
