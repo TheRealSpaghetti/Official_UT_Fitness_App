@@ -7,30 +7,54 @@
 //
 
 import Foundation
+import Firebase
 
 struct NutrientAnalysis{
+    
+    let db = Firestore.firestore()
     
     var height: Double       //height in centimeters
     var weight: Double       //weight in kilograms
     //var experience: Int    //experiece in weightlifting
-    var gain: Bool
-    var lose: Bool
-    var maintain: Bool
+    var goal: Int           //GOALS: 0 - Losing weight, 1 - Maintain weight, 2 - Gain weight
     var male: Bool
     var activity: Int
     var age: Int
     var genderMult: Double
     var macroArray: [Double] = [0,0,0]
-    
-    init(height: Double, weight: Double, gain: Bool, lose: Bool, maintain: Bool, male: Bool, activity: Int, age: Int) {
+        
+    init(height: Double, weight: Double, goal: Int, male: Bool, activity: Int, age: Int) {
         self.height = height
         self.weight = weight
-        self.gain = gain
-        self.lose = lose
-        self.maintain = maintain
+        self.goal = goal
         self.male = male
         self.activity = activity
         self.age = age
+        
+        let userEmail = String(Auth.auth().currentUser!.email ?? "no email")
+        
+        db.collection("UserData")
+            .whereField("email", isEqualTo: userEmail)
+            .order(by: "date", descending: true)
+            .limit(to: 1)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                    
+                    print("oops")
+                } else {
+                    for doc in querySnapshot!.documents {
+                      
+                        let data = doc.data()
+                        
+                        let heightVar = data["height"] as? Int
+                        let weightVar = data["weight"] as? Int
+                        
+                        print("this user is \(heightVar)cm tall")
+                        print("this user is \(weightVar)kg heavy")
+                    }
+                }
+        }
         
         if(male == true){
             genderMult = 1.0
@@ -38,15 +62,15 @@ struct NutrientAnalysis{
             genderMult = 0.9
         }
         
-        if(gain){
-            macroArray[0] = 0.20      //Protein
-            macroArray[1] = 0.45     //Carbs
-            macroArray[2] = 0.25    //Fats
-        } else if(maintain){
+        if(goal == 2){                 //Gain weight
+            macroArray[0] = 0.20       //Protein
+            macroArray[1] = 0.45       //Carbs
+            macroArray[2] = 0.25       //Fats
+        } else if(goal == 1){          //Maintaining weight
             macroArray[0] = 0.15
             macroArray[1] = 0.50
             macroArray[2] = 0.25
-        } else {
+        } else {                       //Losing weight
             macroArray[0] = 0.15
             macroArray[1] = 0.60
             macroArray[2] = 0.20
@@ -74,9 +98,9 @@ struct NutrientAnalysis{
         var goalModifier: Double
         var BMR: Double
         
-        if(self.gain){
+        if(self.goal == 2){
             goalModifier = 300.0
-        } else if(self.maintain){
+        } else if(self.goal == 1){
             goalModifier = 0.0
         } else {
             goalModifier = -300.0

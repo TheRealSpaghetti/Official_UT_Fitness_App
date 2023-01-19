@@ -32,6 +32,7 @@
 		8C19AC9C29537D3800AC572F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C19AC552952674200AC572F /* Assets.xcassets */; };
 		8C2FA9512961175700E6F8BE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2FA9502961175700E6F8BE /* Constants.swift */; };
 		8C66728029647B0B00C638CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C66727F29647B0B00C638CA /* GoogleService-Info.plist */; };
+		8C6CECFB29732A5C0087E36E /* UserInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6CECFA29732A5C0087E36E /* UserInformationController.swift */; };
 		8CD14A802970DC9B00E01BC6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD14A7F2970DC9B00E01BC6 /* LoginViewController.swift */; };
 		8CD14A822970DD0300E01BC6 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD14A812970DD0300E01BC6 /* SignUpController.swift */; };
 		8CEFFA5929539E52005B52DB /* NSUIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEFFA5829539E52005B52DB /* NSUIColor+Hex.swift */; };
@@ -89,6 +90,7 @@
 		8C19AC95295274C100AC572F /* fasterbackground.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fasterbackground.gif; sourceTree = "<group>"; };
 		8C2FA9502961175700E6F8BE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8C66727F29647B0B00C638CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8C6CECFA29732A5C0087E36E /* UserInformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationController.swift; sourceTree = "<group>"; };
 		8CD14A7F2970DC9B00E01BC6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8CD14A812970DD0300E01BC6 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		8CEFFA5829539E52005B52DB /* NSUIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUIColor+Hex.swift"; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				8C19AC8D29526D3C00AC572F /* TrainingSession.swift */,
 				8C19AC8F29526D4600AC572F /* RestScreen.swift */,
 				8C19AC9129526D5400AC572F /* ExerciseLoadingScreen.swift */,
+				8C6CECFA29732A5C0087E36E /* UserInformationController.swift */,
 				8C19AC93295274A400AC572F /* training_in_session.gif */,
 				8C19AC95295274C100AC572F /* fasterbackground.gif */,
 				8CD14A7F2970DC9B00E01BC6 /* LoginViewController.swift */,
@@ -487,6 +490,7 @@
 				8C19AC8629526BAD00AC572F /* GifLoader.swift in Sources */,
 				8C19AC8429526B9200AC572F /* NutritionAnalysis.swift in Sources */,
 				8C19AC8A29526BD900AC572F /* SegueRightAnimation.swift in Sources */,
+				8C6CECFB29732A5C0087E36E /* UserInformationController.swift in Sources */,
 				8C19AC512952674100AC572F /* HomePage.swift in Sources */,
 				8C19AC8029526A2600AC572F /* Exercise.swift in Sources */,
 				8C2FA9512961175700E6F8BE /* Constants.swift in Sources */,

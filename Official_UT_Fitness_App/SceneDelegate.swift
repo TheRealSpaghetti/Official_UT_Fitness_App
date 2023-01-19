@@ -30,7 +30,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 let home = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
                 
                 window.rootViewController = home
-
             }
             
             self.window = window

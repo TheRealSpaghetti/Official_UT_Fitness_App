@@ -17,21 +17,25 @@ class NutritionStats: UIViewController {
     @IBOutlet weak var calorieLabel: UILabel!
     @IBOutlet var pieView: PieChartView!
     
-    var foodWizard = NutrientAnalysis(height: 150, weight: 36 , gain: false, lose: false, maintain: true, male: false, activity: 2, age: 10)
+    //GOALS: 0 - Losing weight, 1 - Maintain weight, 2 - Gain weight
+    
+    var foodWizard = NutrientAnalysis(height: 150, weight: 36 , goal: 0, male: false, activity: 2, age: 10)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //The code here sets up the user's data received from Firebase
         
-        
-        setupPieChart()
-        print("chart constructed")
-        
-        calorieLabel.text = String(format: "%.2f" + " kCal", foodWizard.getCalories())
-        carbLabel.text = "\(foodWizard.getCarbs()) grams"
-        proteinLabel.text = "\(foodWizard.getProtein()) grams"
-        fatsLabel.text = "\(foodWizard.getFats()) grams"
+        //The code below generates the macronutrient pie chart
+//        setupPieChart()
+//        print("chart constructed")
+//        
+//        calorieLabel.text = String(format: "%.2f" + " kCal", foodWizard.getCalories())
+//        carbLabel.text = "\(foodWizard.getCarbs()) grams"
+//        proteinLabel.text = "\(foodWizard.getProtein()) grams"
+//        fatsLabel.text = "\(foodWizard.getFats()) grams"
     }
-    
+
+    //function to add data to pie chart
     func setupPieChart(){
         print("unga bunga")
         pieView.chartDescription.enabled = false
