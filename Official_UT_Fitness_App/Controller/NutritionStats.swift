@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import Firebase
 
 class NutritionStats: UIViewController {
     
@@ -17,22 +18,58 @@ class NutritionStats: UIViewController {
     @IBOutlet weak var calorieLabel: UILabel!
     @IBOutlet var pieView: PieChartView!
     
+    let db = Firestore.firestore()
+    
     //GOALS: 0 - Losing weight, 1 - Maintain weight, 2 - Gain weight
     
-    var foodWizard = NutrientAnalysis(height: 150, weight: 36 , goal: 0, male: false, activity: 2, age: 10)
+    //OLD USE OF THE NUTRIENT ANALYSIS STRUCT
+    var foodWizard = NutrientAnalysis(height: 0, weight: 0, goal: 0, male: false, activity: 0, age: 0)
+    
+    //var foodWizard = NutrientAnalysis()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //The code here sets up the user's data received from Firebase
         
+        let userEmail = String(Auth.auth().currentUser!.email ?? "no email")
+        
+        db.collection("UserData")
+            .whereField("email", isEqualTo: userEmail)
+            .order(by: "date", descending: true)
+            .limit(to: 1)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                    print("oops")
+                } else {
+                    for doc in querySnapshot!.documents {
+                        
+                        let data = doc.data()
+                          
+                        DispatchQueue.main.async {
+                            let setHeight = (data["height"] as? Double)!
+                            let setWeight = (data["weight"] as? Double)!
+                            let setGoal = (data["goal"] as? Int)!
+                            let setMale = (data["sex"] as? Bool)!
+                            let setActivity = (data["activity"] as? Int)!
+                            let setAge = (data["age"] as? Int)!
+                            self.foodWizard.updateInfo(height: setHeight, weight: setWeight, goal: setGoal, male: setMale, activity: setActivity, age: setAge)
+                            self.setupPieChart()
+                        }
+                    }
+                }
+        }
+        
         //The code below generates the macronutrient pie chart
-//        setupPieChart()
-//        print("chart constructed")
-//        
-//        calorieLabel.text = String(format: "%.2f" + " kCal", foodWizard.getCalories())
-//        carbLabel.text = "\(foodWizard.getCarbs()) grams"
-//        proteinLabel.text = "\(foodWizard.getProtein()) grams"
-//        fatsLabel.text = "\(foodWizard.getFats()) grams"
+        print("chart constructed")
+        
+        
+        print("Chart Data: This user is \(foodWizard.height)cm tall")
+        calorieLabel.text = String(format: "%.2f" + " kCal", foodWizard.getCalories())
+        carbLabel.text = "\(foodWizard.getCarbs()) grams"
+        proteinLabel.text = "\(foodWizard.getProtein()) grams"
+        fatsLabel.text = "\(foodWizard.getFats()) grams"
+        print("this user is \(foodWizard.height)cm tall")
     }
 
     //function to add data to pie chart
@@ -45,6 +82,8 @@ class NutritionStats: UIViewController {
         pieView.isUserInteractionEnabled = false
         pieView.legend.enabled = false
         
+        
+        //CHANGE THIS CODE
         var entries: [PieChartDataEntry] = Array()
         entries.append(PieChartDataEntry(value: 50, label: "Fat"))
         entries.append(PieChartDataEntry(value: 30, label: "Protein"))

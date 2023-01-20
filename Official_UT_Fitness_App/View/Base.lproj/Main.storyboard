@@ -103,12 +103,26 @@
                                     <action selector="setUserData:" destination="MJz-7q-O1w" eventType="touchUpInside" id="3AU-13-y9c"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzZ-sF-nDN">
+                                <rect key="frame" x="193" y="101" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qgJ-56-EUJ">
+                                <rect key="frame" x="193" y="130" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vYc-gt-DbJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="activityInput" destination="k76-rL-Qla" id="TWd-jW-BkS"/>
+                        <outlet property="ageInput" destination="qgJ-56-EUJ" id="HBL-D7-WNY"/>
                         <outlet property="experienceInput" destination="4LB-Kz-49k" id="0c3-nR-AVm"/>
                         <outlet property="goalInput" destination="EBt-pC-17J" id="nVj-Br-dbN"/>
                         <outlet property="heightInput" destination="m1J-Uu-fyv" id="aHw-yx-rTV"/>
@@ -118,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Fp-SX-M04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="-921"/>
+            <point key="canvasLocation" x="136.80000000000001" y="-921.42857142857144"/>
         </scene>
         <!--Home Page-->
         <scene sceneID="tne-QT-ifu">
@@ -549,8 +563,7 @@ Recommended Fats</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="F4j-gR-FvL"/>
-        <segue reference="Jcy-bm-wlm"/>
-        <segue reference="1rd-av-Wan"/>
+        <segue reference="mci-Yr-EuR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="linkColor">

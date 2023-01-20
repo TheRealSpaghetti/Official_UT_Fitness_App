@@ -31,31 +31,34 @@ struct NutrientAnalysis{
         self.activity = activity
         self.age = age
         
-        let userEmail = String(Auth.auth().currentUser!.email ?? "no email")
-        
-        db.collection("UserData")
-            .whereField("email", isEqualTo: userEmail)
-            .order(by: "date", descending: true)
-            .limit(to: 1)
-            .getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                    
-                    print("oops")
-                } else {
-                    for doc in querySnapshot!.documents {
-                      
-                        let data = doc.data()
-                        
-                        let heightVar = data["height"] as? Int
-                        let weightVar = data["weight"] as? Int
-                        
-                        print("this user is \(heightVar)cm tall")
-                        print("this user is \(weightVar)kg heavy")
-                    }
-                }
-        }
-        
+//        db.collection("UserData")
+//            .whereField("email", isEqualTo: userEmail)
+//            .order(by: "date", descending: true)
+//            .limit(to: 1)
+//            .getDocuments() { (querySnapshot, err) in
+//                if let err = err {
+//                    print("Error getting documents: \(err)")
+//
+//                    print("oops")
+//                } else {
+//                    for doc in querySnapshot!.documents {
+//
+//                        let data = doc.data()
+//
+//                        DispatchQueue.main.async {
+//
+//                            print("woohoo!")
+//                            let setHeight = (data["height"] as? Double)!
+//                            let setWeight = (data["weight"] as? Double)!
+//                            let setGoal = (data["goal"] as? Int)!
+//                            let setMale = (data["sex"] as? Bool)!
+//                            let setActivity = (data["activity"] as? Int)!
+//                            let setAge = (data["age"] as? Int)!
+//                        }
+//                    }
+//                }
+//        }
+  
         if(male == true){
             genderMult = 1.0
         } else {
@@ -75,6 +78,40 @@ struct NutrientAnalysis{
             macroArray[1] = 0.60
             macroArray[2] = 0.20
         }
+    }
+    
+    mutating func updateInfo(height: Double, weight: Double, goal: Int, male: Bool, activity: Int, age: Int){
+        
+        print("info updated successfully")
+        
+        self.height = height
+        self.weight = weight
+        self.goal = goal
+        self.male = male
+        self.activity = activity
+        self.age = age
+    
+        if(male == true){
+            genderMult = 1.0
+        } else {
+            genderMult = 0.9
+        }
+        
+        if(goal == 2){                 //Gain weight
+            macroArray[0] = 0.20       //Protein
+            macroArray[1] = 0.45       //Carbs
+            macroArray[2] = 0.25       //Fats
+        } else if(goal == 1){          //Maintaining weight
+            macroArray[0] = 0.15
+            macroArray[1] = 0.50
+            macroArray[2] = 0.25
+        } else {                       //Losing weight
+            macroArray[0] = 0.15
+            macroArray[1] = 0.60
+            macroArray[2] = 0.20
+        }
+        
+        print("this user is \(self.height)cm tall")
     }
     
     func getProtein() -> Int{

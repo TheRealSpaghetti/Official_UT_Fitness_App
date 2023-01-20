@@ -18,6 +18,7 @@ class UserInformationController: UIViewController {
     @IBOutlet weak var sexInput: UITextField!
     @IBOutlet weak var activityInput: UITextField!
     @IBOutlet weak var experienceInput: UITextField!
+    @IBOutlet weak var ageInput: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class UserInformationController: UIViewController {
     
     @IBAction func setUserData(_ sender: UIButton) {
         
-        if let userHeight = heightInput.text, let userWeight = weightInput.text, let userGoal = goalInput.text, let userSex = sexInput.text, let userActivity = activityInput.text, let userExperience = experienceInput.text{
+        if let userHeight = heightInput.text, let userWeight = weightInput.text, let userGoal = goalInput.text, let userSex = sexInput.text, let userActivity = activityInput.text, let userExperience = experienceInput.text, let userAge = ageInput.text{
             
             db.collection("UserData").addDocument(data: [
                 "height": Double(userHeight),
@@ -34,6 +35,7 @@ class UserInformationController: UIViewController {
                 "sex": true,
                 "activity": Int(userActivity),
                 "experience": Int(userExperience),
+                "age": Int(userAge),
                 "UID": String(Auth.auth().currentUser!.uid),
                 "email": String(Auth.auth().currentUser!.email ?? "no email"),
                 "date": Date().timeIntervalSince1970
