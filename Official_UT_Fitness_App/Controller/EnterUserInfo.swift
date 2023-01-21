@@ -28,11 +28,18 @@ class UserInformationController: UIViewController {
         
         if let userHeight = heightInput.text, let userWeight = weightInput.text, let userGoal = goalInput.text, let userSex = sexInput.text, let userActivity = activityInput.text, let userExperience = experienceInput.text, let userAge = ageInput.text{
             
+            var maleBool = true
+            
+            if(Int(userSex) == 0){
+                maleBool = false
+            }
+            
+            //ADD CODE: Set default value for user value
             db.collection("UserData").addDocument(data: [
                 "height": Double(userHeight),
                 "weight": Double(userWeight),
                 "goal": Int(userGoal),
-                "sex": true,
+                "sex": maleBool,
                 "activity": Int(userActivity),
                 "experience": Int(userExperience),
                 "age": Int(userAge),
@@ -47,7 +54,10 @@ class UserInformationController: UIViewController {
                 }
             }
         }
-        
-        
     }
+    
+    @IBAction func homeButtonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goBackHome", sender: self)
+    }
+    
 }

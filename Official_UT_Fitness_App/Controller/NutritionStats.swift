@@ -12,25 +12,21 @@ import Firebase
 
 class NutritionStats: UIViewController {
     
+    let db = Firestore.firestore()
     @IBOutlet weak var fatsLabel: UILabel!
     @IBOutlet weak var carbLabel: UILabel!
     @IBOutlet weak var proteinLabel: UILabel!
     @IBOutlet weak var calorieLabel: UILabel!
     @IBOutlet var pieView: PieChartView!
     
-    let db = Firestore.firestore()
-    
     //GOALS: 0 - Losing weight, 1 - Maintain weight, 2 - Gain weight
-    
-    //OLD USE OF THE NUTRIENT ANALYSIS STRUCT
+
     var foodWizard = NutrientAnalysis(height: 0, weight: 0, goal: 0, male: false, activity: 0, age: 0)
-    
-    //var foodWizard = NutrientAnalysis()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //The code here sets up the user's data received from Firebase
         
+        //Code Segment: Reads User Data from Firebase
         let userEmail = String(Auth.auth().currentUser!.email ?? "no email")
         
         db.collection("UserData")
@@ -46,35 +42,31 @@ class NutritionStats: UIViewController {
                         
                         let data = doc.data()
                           
-                        DispatchQueue.main.async {
+                        //Code Segment: Sets User Stats from data retrieved from Firebase
+                        //TO DO: Make sure not to allow info update unless user has checked all boxes
+                        DispatchQueue.main.async { [self] in
                             let setHeight = (data["height"] as? Double)!
                             let setWeight = (data["weight"] as? Double)!
                             let setGoal = (data["goal"] as? Int)!
                             let setMale = (data["sex"] as? Bool)!
                             let setActivity = (data["activity"] as? Int)!
                             let setAge = (data["age"] as? Int)!
+                            
+                            //Code Segment: Generates Pie Chart
                             self.foodWizard.updateInfo(height: setHeight, weight: setWeight, goal: setGoal, male: setMale, activity: setActivity, age: setAge)
                             self.setupPieChart()
+                            self.calorieLabel.text = String(format: "%.2f" + " kCal", foodWizard.getCalories())
+                            self.carbLabel.text = "\(foodWizard.getCarbs()) grams"
+                            self.proteinLabel.text = "\(foodWizard.getProtein()) grams"
+                            self.fatsLabel.text = "\(foodWizard.getFats()) grams"
                         }
                     }
                 }
         }
-        
-        //The code below generates the macronutrient pie chart
-        print("chart constructed")
-        
-        
-        print("Chart Data: This user is \(foodWizard.height)cm tall")
-        calorieLabel.text = String(format: "%.2f" + " kCal", foodWizard.getCalories())
-        carbLabel.text = "\(foodWizard.getCarbs()) grams"
-        proteinLabel.text = "\(foodWizard.getProtein()) grams"
-        fatsLabel.text = "\(foodWizard.getFats()) grams"
-        print("this user is \(foodWizard.height)cm tall")
     }
 
     //function to add data to pie chart
     func setupPieChart(){
-        print("unga bunga")
         pieView.chartDescription.enabled = false
         pieView.drawHoleEnabled = false
         pieView.rotationAngle = 0
@@ -82,13 +74,13 @@ class NutritionStats: UIViewController {
         pieView.isUserInteractionEnabled = false
         pieView.legend.enabled = false
         
-        
         //CHANGE THIS CODE
         var entries: [PieChartDataEntry] = Array()
-        entries.append(PieChartDataEntry(value: 50, label: "Fat"))
-        entries.append(PieChartDataEntry(value: 30, label: "Protein"))
-        entries.append(PieChartDataEntry(value: 20, label: "Carbohydrates"))
+        entries.append(PieChartDataEntry(value: foodWizard.macroArray[0], label: "Protein"))
+        entries.append(PieChartDataEntry(value: foodWizard.macroArray[1], label: "Carbohydrates"))
+        entries.append(PieChartDataEntry(value: foodWizard.macroArray[2], label: "Fats"))
         
+        //Code Segment: Sets color of each area of the pie chart
         let dataSet = PieChartDataSet(entries: entries, label: "")
         let c1 = NSUIColor(red: 255, green: 153, blue: 0)
         let c2 = NSUIColor(red: 57, green: 240, blue: 119)

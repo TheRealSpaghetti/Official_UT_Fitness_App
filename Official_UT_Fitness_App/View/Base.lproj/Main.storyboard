@@ -116,6 +116,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nfs-gQ-uAD">
+                                <rect key="frame" x="132" y="713" width="112" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Home Page"/>
+                                <connections>
+                                    <action selector="homeButtonPressed:" destination="MJz-7q-O1w" eventType="touchUpInside" id="BsY-eh-egx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vYc-gt-DbJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -128,11 +137,64 @@
                         <outlet property="heightInput" destination="m1J-Uu-fyv" id="aHw-yx-rTV"/>
                         <outlet property="sexInput" destination="uJY-jv-orY" id="nNc-vV-U5A"/>
                         <outlet property="weightInput" destination="byR-8D-mMC" id="zxB-FK-vOH"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goBackHome" modalPresentationStyle="fullScreen" id="1jG-1Y-Anp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Fp-SX-M04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="-921.42857142857144"/>
+        </scene>
+        <!--Generate Workout-->
+        <scene sceneID="HfD-dj-Nm4">
+            <objects>
+                <viewController id="1jl-r7-R8g" customClass="GenerateWorkout" customModule="Official_UT_Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dnN-LC-Px8" customClass="GenerateWor">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5t1-Fc-tPH">
+                                <rect key="frame" x="153" y="726" width="70" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Home"/>
+                                <connections>
+                                    <action selector="HomeButton:" destination="1jl-r7-R8g" eventType="touchUpInside" id="5hN-kV-1I1"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cha-ya-47x">
+                                <rect key="frame" x="47" y="169" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnJ-4a-c2G">
+                                <rect key="frame" x="47" y="140" width="123" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uu9-h9-GpG">
+                                <rect key="frame" x="47" y="324" width="163" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Generate Workout"/>
+                                <connections>
+                                    <action selector="generateButton:" destination="1jl-r7-R8g" eventType="touchUpInside" id="lPs-p0-tSC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8M8-DQ-FiW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="daysExercise" destination="Cha-ya-47x" id="d7W-i2-b9W"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="returnHome" modalPresentationStyle="fullScreen" id="JsO-be-T1s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XDn-JH-JHs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1191" y="-921"/>
         </scene>
         <!--Home Page-->
         <scene sceneID="tne-QT-ifu">
@@ -164,12 +226,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWb-Od-9jj">
-                                <rect key="frame" x="95" y="119" width="185" height="143"/>
+                                <rect key="frame" x="29" y="70" width="111" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="User Data"/>
                                 <connections>
                                     <action selector="goToUserData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2tY-E9-tRP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUf-i2-6Oh">
+                                <rect key="frame" x="187" y="86" width="163" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Generate Workout"/>
+                                <connections>
+                                    <action selector="goToGeneratePage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4VV-kZ-UWg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -191,6 +262,7 @@
                         <segue destination="lkq-xS-Cin" kind="presentation" identifier="goToTimer" modalPresentationStyle="fullScreen" id="Jcy-bm-wlm"/>
                         <segue destination="ayK-oA-Hk9" kind="presentation" identifier="goToNutrition" customClass="SegueFromLeft" customModule="Official_UT_Fitness_App" customModuleProvider="target" modalPresentationStyle="fullScreen" id="bP4-OR-00x"/>
                         <segue destination="MJz-7q-O1w" kind="presentation" identifier="HomeToInfo" modalPresentationStyle="fullScreen" id="5oG-sS-SoP"/>
+                        <segue destination="1jl-r7-R8g" kind="presentation" identifier="goToGeneratePage" modalPresentationStyle="fullScreen" id="6eb-sv-b1h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -206,7 +278,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="137.4384236453202"/>
+            <point key="canvasLocation" x="137" y="112"/>
         </scene>
         <!--Training Session-->
         <scene sceneID="QA2-bS-5c1">
@@ -530,7 +602,7 @@ Recommended Fats</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3cN-3v-acW" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="62" y="415" width="250" height="250"/>
+                                <rect key="frame" x="12" y="249" width="350" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -558,12 +630,12 @@ Recommended Fats</string>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1265" y="137"/>
+            <point key="canvasLocation" x="-1266.4000000000001" y="136.69950738916256"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="F4j-gR-FvL"/>
-        <segue reference="mci-Yr-EuR"/>
+        <segue reference="JsO-be-T1s"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="linkColor">

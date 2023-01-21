@@ -15,7 +15,6 @@ struct NutrientAnalysis{
     
     var height: Double       //height in centimeters
     var weight: Double       //weight in kilograms
-    //var experience: Int    //experiece in weightlifting
     var goal: Int           //GOALS: 0 - Losing weight, 1 - Maintain weight, 2 - Gain weight
     var male: Bool
     var activity: Int
@@ -30,34 +29,6 @@ struct NutrientAnalysis{
         self.male = male
         self.activity = activity
         self.age = age
-        
-//        db.collection("UserData")
-//            .whereField("email", isEqualTo: userEmail)
-//            .order(by: "date", descending: true)
-//            .limit(to: 1)
-//            .getDocuments() { (querySnapshot, err) in
-//                if let err = err {
-//                    print("Error getting documents: \(err)")
-//
-//                    print("oops")
-//                } else {
-//                    for doc in querySnapshot!.documents {
-//
-//                        let data = doc.data()
-//
-//                        DispatchQueue.main.async {
-//
-//                            print("woohoo!")
-//                            let setHeight = (data["height"] as? Double)!
-//                            let setWeight = (data["weight"] as? Double)!
-//                            let setGoal = (data["goal"] as? Int)!
-//                            let setMale = (data["sex"] as? Bool)!
-//                            let setActivity = (data["activity"] as? Int)!
-//                            let setAge = (data["age"] as? Int)!
-//                        }
-//                    }
-//                }
-//        }
   
         if(male == true){
             genderMult = 1.0
@@ -81,7 +52,7 @@ struct NutrientAnalysis{
     }
     
     mutating func updateInfo(height: Double, weight: Double, goal: Int, male: Bool, activity: Int, age: Int){
-        
+
         print("info updated successfully")
         
         self.height = height
@@ -130,7 +101,6 @@ struct NutrientAnalysis{
     }
     
     func getCalories() -> Double {
-        
         var activityModifier: Double
         var goalModifier: Double
         var BMR: Double

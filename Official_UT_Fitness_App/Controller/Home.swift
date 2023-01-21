@@ -31,4 +31,8 @@ class HomePage: UIViewController {
     @IBAction func goToUserData(_ sender: UIButton) {
         self.performSegue(withIdentifier: "HomeToInfo", sender: self)
     }
+    
+    @IBAction func goToGeneratePage(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToGeneratePage", sender: self)
+    }
 }
