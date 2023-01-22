@@ -31,12 +31,12 @@ struct ExerciseGenerator{
         }
         
         for _ in 1...(upperbound-1){
-            var newExercise = ["Exercise Name","Order","Time per set","Rest time","Weight"]
+            let newExercise = ["Exercise Name","Order","Time per set","Rest time","Weight"]
             collection.append(newExercise)
         }
         
         for _ in upperbound...10{
-            var emptyExercise = ["N/A","N/A","N/A","N/A","N/A"]
+            let emptyExercise = ["N/A","N/A","N/A","N/A","N/A"]
             collection.append(emptyExercise)
         }
         
