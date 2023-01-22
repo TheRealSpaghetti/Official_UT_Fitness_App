@@ -12,21 +12,15 @@ import UIKit
 struct Exercise{
     var name : String           //exercise name
     var order : Int             //which order the exercise appears in the workout plan
-    var fullVideo: UIImage      //full video of the exercise, only play during first time (or press the info button)
-    var preview: UIImage        //exercise demo clip
-    var exercisetime: Int       //time given to complete exercise
-    var restTime: Int           //time given for rest
+    var exercisetime: Int       //time given to complete a single set
+    var restTime: Int           //time given for rest between sets
     var weight: Double          //resistance load
-    var exerciseExp: Int        //experience doing this specific exercise
     
-    init(name: String, order: Int, fullVideo: UIImage, preview: UIImage, exercisetime: Int, restTime: Int, exerciseExp: Int) {
+    init(name: String, order: Int, exercisetime: Int, restTime: Int) {
         self.name = name
         self.order = order
-        self.fullVideo = fullVideo
-        self.preview = preview
         self.exercisetime = exercisetime
         self.restTime = restTime
-        self.exerciseExp = exerciseExp
         self.weight = 0
     }
     

@@ -10,6 +10,7 @@ import Firebase
 
 class GenerateWorkout: UIViewController {
 
+    let db = Firestore.firestore()
     @IBOutlet weak var daysExercise: UITextField!
    
     override func viewDidLoad() {
@@ -18,11 +19,32 @@ class GenerateWorkout: UIViewController {
 
     @IBAction func generateButton(_ sender: UIButton) {
         
-        var numberOfPlans = daysExercise.text!
-        var workoutGenerator = ExerciseGenerator()
+        let numberOfPlans = daysExercise.text!
         
-        for i in 1...Int(numberOfPlans)! {
-            workoutGenerator.generate(day: String(i))
+        let userEmail = String(Auth.auth().currentUser!.email ?? "no email")
+        db.collection("UserData")
+            .whereField("email", isEqualTo: userEmail)
+            .order(by: "date", descending: true)
+            .limit(to: 1)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for doc in querySnapshot!.documents {
+                        let data = doc.data()
+                        DispatchQueue.main.async {
+                            let setWeight = (data["weight"] as? Double)!
+                            let setMale = (data["sex"] as? Bool)!
+                            let setExperience = (data["experience"] as? Int)!
+                            
+                            var workoutGenerator = ExerciseGenerator(weight: setWeight, male: setMale, experience: setExperience)
+                        
+                            for i in 1...Int(numberOfPlans)! {
+                                workoutGenerator.generate(day: String(i))
+                            }
+                        }
+                    }
+                }
         }
     }
     
