@@ -56,6 +56,11 @@ struct Exercise {
                 static let male_scale = [0.15, 0.20, 0.35, 0.55, 0.80, 1.05]
                 static let female_scale = [0.05, 0.10, 0.20, 0.35 ,0.50, 0.65]
             }
+            struct __3{
+                static let info = ["Reverse Grip Lat Pulldown", "60", "210", "5" , "5"]
+                static let male_scale = [0.40, 0.50, 0.75, 1.25, 1.50, 2.00]
+                static let female_scale = [0.10, 0.15, 0.30, 0.60 ,0.95, 1.40]
+        }
     }
     struct BackSecondary {
             struct __1{
@@ -76,7 +81,7 @@ struct Exercise {
                 static let male_scale = [0.15, 0.25, 0.50, 0.75, 1.25, 1.75]
                 static let female_scale = [0.05, 0.05, 0.10, 0.20,0.35, 0.55]
                 }
-           struct __2{
+            struct __2{
                 static let info = ["Dumbbell Reverse Fly", "60", "150", "8" , "4"]
                 static let male_scale = [0.05, 0.05, 0.10, 0.25, 0.40, 0.60]
                 static let female_scale = [0.05, 0.05, 0.10, 0.15, 0.25, 0.40]
@@ -95,6 +100,12 @@ struct Exercise {
                 static let male_scale = [0.80, 1.00, 1.50, 2.00, 2.50, 3.00]
                 static let female_scale = [0.40, 0.50, 1.00, 1.25, 1.75, 2.50]
             }
+            struct __3{
+                static let info = ["Front Squat", "60", "210", "5" , "5"]
+                static let male_scale = [0.60, 0.75, 1.00, 1.25, 1.75, 2.25]
+                static let female_scale = [0.40, 0.50, 0.75, 1.00, 1.25, 1.50]
+        }
+        
     }
     
 //MARK: - SHOULDER EXERCISES
