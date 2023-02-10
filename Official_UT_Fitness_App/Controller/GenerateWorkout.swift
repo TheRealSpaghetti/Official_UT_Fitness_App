@@ -40,6 +40,8 @@ class GenerateWorkout: UIViewController {
                             var workoutGenerator = ExerciseGenerator(weight: setWeight, male: setMale, experience: setExperience)
                         
                             for i in 1...Int(numberOfPlans)! {
+                                print(i)
+                                
                                 workoutGenerator.generate(day: String(i))
                             }
                         }

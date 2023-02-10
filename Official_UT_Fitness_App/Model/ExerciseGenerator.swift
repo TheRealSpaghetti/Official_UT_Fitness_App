@@ -20,21 +20,29 @@ struct ExerciseGenerator{
         self.experience = experience
     }
         
-    func arrayCreator(workoutNumber: Int)->[[String]]{
+    func SBD_Generator(workoutNumber: Int)->[[String]]{
         var collection = [[String]]()
         var upperbound: Int
         
         if(self.experience > 2){
-            upperbound = 6
-        } else {
             upperbound = 5
+        } else {
+            upperbound = 4
         }
+        
+        //adds exercise information
+        //--Exercise Name--
+        //-----Order-------
+        //--Time per set---
+        //----Rest time----
+        //-----Weight------
         
         for _ in 1...(upperbound-1){
             let newExercise = ["Exercise Name","Order","Time per set","Rest time","Weight"]
             collection.append(newExercise)
         }
         
+        //fills in the empty slots
         for _ in upperbound...10{
             let emptyExercise = ["N/A","N/A","N/A","N/A","N/A"]
             collection.append(emptyExercise)
@@ -43,11 +51,44 @@ struct ExerciseGenerator{
         return collection
     }
         
+    func PPL_Generator(workoutNumber: Int)->[[String]]{
+        var collection = [[String]]()
+        var upperbound: Int
+
+        if(self.experience > 2){
+            upperbound = 6
+        } else {
+            upperbound = 5
+        }
+
+        for _ in 1...(upperbound-1){
+            let newExercise = ["Exercise Name","Order","Time per set","Rest time","Weight"]
+            collection.append(newExercise)
+        }
+
+        for _ in upperbound...10{
+            let emptyExercise = ["N/A","N/A","N/A","N/A","N/A"]
+            collection.append(emptyExercise)
+        }
+
+        return collection
+    }
+    
     func generate(day: String){
+        
+            //if day == 1 || day ==  2 (create SBD workout plan)  <== CREATING THIS
+            //if day == 6 || day ==  2 (create SBD workout plan)
+        
             let documentName = "Workout_" + day
-            let whichWorkout = Int(day)!
-            let exerciseCollection = self.arrayCreator(workoutNumber: whichWorkout)
-            
+            let workoutType = Int(day)!
+            let exerciseCollection: [[String]]
+        
+            if(workoutType <= 2){
+                exerciseCollection = self.SBD_Generator(workoutNumber: workoutType)
+            } else if(workoutType <= 6){
+                exerciseCollection = self.PPL_Generator(workoutNumber: workoutType)
+            }
+        
             db.collection(documentName).addDocument(data: [
                 "Exercise 0": exerciseCollection[0],
                 "Exercise 1": exerciseCollection[1],
