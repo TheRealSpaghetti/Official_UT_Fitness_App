@@ -37,12 +37,12 @@ class GenerateWorkout: UIViewController {
                             let setMale = (data["sex"] as? Bool)!
                             let setExperience = (data["experience"] as? Int)!
                             
-                            var workoutGenerator = ExerciseGenerator(weight: setWeight, male: setMale, experience: setExperience)
+                            let workoutGenerator = ExerciseGenerator(weight: setWeight, male: setMale, experience: setExperience, activeDays: Int(numberOfPlans)!)
                         
                             for i in 1...Int(numberOfPlans)! {
                                 print(i)
                                 
-                                workoutGenerator.generate(day: String(i))
+                                workoutGenerator.generate(workoutNumber: String(i))
                             }
                         }
                     }

@@ -1,3 +1,10 @@
+//
+//  NutritionStats.swift
+//  UT-Fit-App
+//
+//  Created by Leon Lee on 2022-11-20.
+//  Copyright © 2022 Leon Lee. All rights reserved.
+//
 
 import UIKit
 
@@ -26,7 +33,6 @@ class HomePage: UIViewController {
         
         self.performSegue(withIdentifier: "goToTimer", sender: self)
     }
-    
     
     @IBAction func goToUserData(_ sender: UIButton) {
         self.performSegue(withIdentifier: "HomeToInfo", sender: self)

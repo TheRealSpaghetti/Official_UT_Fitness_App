@@ -36,6 +36,7 @@
 		8C6CECFB29732A5C0087E36E /* EnterUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6CECFA29732A5C0087E36E /* EnterUserInfo.swift */; };
 		8CD14A802970DC9B00E01BC6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD14A7F2970DC9B00E01BC6 /* LoginViewController.swift */; };
 		8CD14A822970DD0300E01BC6 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD14A812970DD0300E01BC6 /* SignUpController.swift */; };
+		8CED00D22996AB6E0094766E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED00D12996AB6E0094766E /* Exercise.swift */; };
 		8CEFFA5929539E52005B52DB /* NSUIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEFFA5829539E52005B52DB /* NSUIColor+Hex.swift */; };
 		F9106865FF1F741507187DF1 /* Pods_Official_UT_Fitness_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6874B3A2A8FA13C935A042B2 /* Pods_Official_UT_Fitness_App.framework */; };
 /* End PBXBuildFile section */
@@ -95,6 +96,7 @@
 		8C6CECFA29732A5C0087E36E /* EnterUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUserInfo.swift; sourceTree = "<group>"; };
 		8CD14A7F2970DC9B00E01BC6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8CD14A812970DD0300E01BC6 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		8CED00D12996AB6E0094766E /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		8CEFFA5829539E52005B52DB /* NSUIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUIColor+Hex.swift"; sourceTree = "<group>"; };
 		9663711416A9B86585B2B085 /* Pods-Official_UT_Fitness_AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Official_UT_Fitness_AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Official_UT_Fitness_AppTests/Pods-Official_UT_Fitness_AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A3DDDEAAF28C6737115C923C /* Pods_Official_UT_Fitness_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Official_UT_Fitness_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,12 +214,13 @@
 			isa = PBXGroup;
 			children = (
 				8C19AC8129526A4500AC572F /* SecondsToString.swift */,
+				8CED00D12996AB6E0094766E /* Exercise.swift */,
 				8C19AC7F29526A2600AC572F /* ExerciseLibrary.swift */,
 				8C5DBFA0297B19EB003B23E9 /* ExerciseGenerator.swift */,
 				8C19AC8329526B9200AC572F /* NutritionAnalysis.swift */,
 				8C19AC8529526BAD00AC572F /* GifLoader.swift */,
-				8C19AC8729526BC400AC572F /* SegueLeftAnimation.swift */,
 				8C19AC8929526BD900AC572F /* SegueRightAnimation.swift */,
+				8C19AC8729526BC400AC572F /* SegueLeftAnimation.swift */,
 				8CEFFA5829539E52005B52DB /* NSUIColor+Hex.swift */,
 			);
 			path = Model;
@@ -495,6 +498,7 @@
 				8C19AC8A29526BD900AC572F /* SegueRightAnimation.swift in Sources */,
 				8C6CECFB29732A5C0087E36E /* EnterUserInfo.swift in Sources */,
 				8C19AC512952674100AC572F /* Home.swift in Sources */,
+				8CED00D22996AB6E0094766E /* Exercise.swift in Sources */,
 				8C19AC8029526A2600AC572F /* ExerciseLibrary.swift in Sources */,
 				8C2FA9512961175700E6F8BE /* Constants.swift in Sources */,
 				8C19AC9029526D4600AC572F /* Rest.swift in Sources */,
