@@ -7,27 +7,55 @@
 //
 
 import UIKit
+import Firebase
 
 class TrainingSession: UIViewController {
     @IBOutlet weak var exerciseLabel: UILabel!
     @IBOutlet weak var backgroundGif: UIImageView!
+    let db = Firestore.firestore()
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
-    var timeLeft: TimeInterval = 10
+    var timeLeft: TimeInterval = 69
     var rounded: Int {return Int(round(timeLeft))}
     var endTime: Date?
     var timeLabel =  UILabel()
     var timer = Timer()
     var timeStringConverter = TimeStringGetter()
     var tapCount = 0
+    var word = "this has not been changed"
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         //sets GIF background
-        //let squareGif = UIImage.gifImageWithName("training_in_session")
         let squareGif = UIImage.gifImageWithName("fasterbackground")
+        let userEmail = String(Auth.auth().currentUser!.email ?? "no email")
         backgroundGif.image = squareGif
         backgroundGif.image = squareGif
+        
+        let appStatus = UserDefaults.standard.string(forKey: "App Status")
+        print(appStatus as Any)
+        
+        db.collection("Current Workout")
+            .whereField("email", isEqualTo: userEmail)
+            .order(by: "date", descending: true)
+            .limit(to: 1)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for doc in querySnapshot!.documents {
+                        let data = doc.data()
+                        
+                        DispatchQueue.main.async { [self] in
+                            print(data["workout type"]!)
+
+                            exerciseLabel.text = "Ooga Booga"
+                        }
+                    }
+                }
+        }
+        
+        print("x")
+        super.viewDidLoad()
         tapCount = 0
         drawBgShape()
         drawTimeLeftShape()
@@ -35,7 +63,6 @@ class TrainingSession: UIViewController {
     }
 
     @IBAction func exerciseStarted(_ sender: UITapGestureRecognizer) {
-        
         if(tapCount == 0){
             // here you define the fromValue, toValue and duration of your animation
             strokeIt.fromValue = 1
@@ -84,7 +111,6 @@ class TrainingSession: UIViewController {
     }
     
     @objc func updateTime() {
-        
         if timeLeft > 0 {
             timeLeft = endTime?.timeIntervalSinceNow ?? 0
             timeLabel.text = timeStringConverter.getString(timeData: rounded)

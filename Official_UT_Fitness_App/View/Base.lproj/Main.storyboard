@@ -204,27 +204,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0F0-S2-2nc">
-                                <rect key="frame" x="75" y="691" width="225" height="46"/>
-                                <color key="backgroundColor" red="0.38587427140000002" green="0.37681865689999999" blue="0.61593395470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="225" id="70p-Yd-4kI"/>
-                                    <constraint firstAttribute="height" constant="114" id="C2P-4x-P7Z"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="Start Work Out">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M4W-H2-2Ug"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWb-Od-9jj">
                                 <rect key="frame" x="29" y="70" width="111" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -243,15 +222,30 @@
                                     <action selector="goToGeneratePage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4VV-kZ-UWg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAM-4w-Hjh">
+                                <rect key="frame" x="50" y="662" width="275.66666666666674" height="47.666666666666686"/>
+                                <color key="tintColor" red="0.4549019608" green="0.44705882349999998" blue="0.82352941180000006" alpha="0.98603062909999994" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="START WORKOUT">
+                                            <attributes>
+                                                <font key="NSFont" size="29" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="startWorkout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RdI-LE-SVJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RsM-Hw-JMq"/>
                         <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="RsM-Hw-JMq" firstAttribute="bottom" secondItem="0F0-S2-2nc" secondAttribute="bottom" constant="385" id="Bqo-xj-LSn"/>
-                            <constraint firstItem="0F0-S2-2nc" firstAttribute="leading" secondItem="RsM-Hw-JMq" secondAttribute="leading" constant="95" id="G2M-ZC-DTD"/>
-                            <constraint firstItem="0F0-S2-2nc" firstAttribute="top" secondItem="RsM-Hw-JMq" secondAttribute="top" constant="315" id="RAg-c1-1h8"/>
-                            <constraint firstItem="RsM-Hw-JMq" firstAttribute="trailing" secondItem="0F0-S2-2nc" secondAttribute="trailing" constant="94" id="mO0-5A-JfG"/>
+                            <constraint firstItem="hAM-4w-Hjh" firstAttribute="centerY" secondItem="1Q8-sj-ovt" secondAttribute="centerY" id="9fs-1T-BUE"/>
+                            <constraint firstItem="hAM-4w-Hjh" firstAttribute="centerX" secondItem="1Q8-sj-ovt" secondAttribute="centerX" id="uAL-14-IQ4"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="d5r-06-A9A" appends="YES" id="tU3-xU-ex1"/>
@@ -259,7 +253,7 @@
                         </connections>
                     </view>
                     <connections>
-                        <segue destination="lkq-xS-Cin" kind="presentation" identifier="goToTimer" modalPresentationStyle="fullScreen" id="Jcy-bm-wlm"/>
+                        <segue destination="lkq-xS-Cin" kind="presentation" identifier="startWorkout" modalPresentationStyle="fullScreen" id="Jcy-bm-wlm"/>
                         <segue destination="ayK-oA-Hk9" kind="presentation" identifier="goToNutrition" customClass="SegueFromLeft" customModule="Official_UT_Fitness_App" customModuleProvider="target" modalPresentationStyle="fullScreen" id="bP4-OR-00x"/>
                         <segue destination="MJz-7q-O1w" kind="presentation" identifier="HomeToInfo" modalPresentationStyle="fullScreen" id="5oG-sS-SoP"/>
                         <segue destination="1jl-r7-R8g" kind="presentation" identifier="goToGeneratePage" modalPresentationStyle="fullScreen" id="6eb-sv-b1h"/>
@@ -278,7 +272,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="137" y="112"/>
+            <point key="canvasLocation" x="136.80000000000001" y="111.57635467980296"/>
         </scene>
         <!--Training Session-->
         <scene sceneID="QA2-bS-5c1">
@@ -288,9 +282,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMc-6Y-FEk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UMc-6Y-FEk">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set: 1/5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXZ-gy-ArD">
@@ -300,30 +293,42 @@
                                 <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ojb-Ng-AOD" userLabel="Display Info">
-                                <rect key="frame" x="78" y="126" width="218" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojb-Ng-AOD" userLabel="Display Info">
+                                <rect key="frame" x="89" y="113" width="197" height="76"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exercise #1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myi-lx-RkV">
-                                        <rect key="frame" x="66" y="8" width="86" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bench Press" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdC-Ia-Qoa">
-                                        <rect key="frame" x="12" y="37" width="195" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Bench Press" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdC-Ia-Qoa">
+                                        <rect key="frame" x="1" y="37" width="195" height="40.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise #1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myi-lx-RkV">
+                                        <rect key="frame" x="55" y="5" width="86" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="myi-lx-RkV" firstAttribute="leading" secondItem="ojb-Ng-AOD" secondAttribute="leading" constant="55" id="0tK-Tz-1Te"/>
+                                    <constraint firstItem="KdC-Ia-Qoa" firstAttribute="top" secondItem="myi-lx-RkV" secondAttribute="bottom" constant="11" id="TkS-TH-ZgY"/>
+                                    <constraint firstAttribute="trailing" secondItem="myi-lx-RkV" secondAttribute="trailing" constant="56" id="di3-tp-EIg"/>
+                                    <constraint firstItem="myi-lx-RkV" firstAttribute="top" secondItem="ojb-Ng-AOD" secondAttribute="top" constant="5" id="xjO-Ly-AXD"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wMZ-LG-Y4P"/>
                         <color key="backgroundColor" red="0.19980379940000001" green="0.48169642689999997" blue="0.77313679459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="UMc-6Y-FEk" firstAttribute="leading" secondItem="A2l-zF-O8p" secondAttribute="leading" id="4qF-ff-zyG"/>
+                            <constraint firstItem="UMc-6Y-FEk" firstAttribute="trailing" secondItem="A2l-zF-O8p" secondAttribute="trailing" id="DbM-UJ-8ei"/>
+                            <constraint firstItem="ojb-Ng-AOD" firstAttribute="centerX" secondItem="UMc-6Y-FEk" secondAttribute="centerX" id="MZA-WN-Q7V"/>
+                            <constraint firstItem="ojb-Ng-AOD" firstAttribute="top" secondItem="wMZ-LG-Y4P" secondAttribute="top" constant="66" id="a1D-6B-moU"/>
+                            <constraint firstItem="wMZ-LG-Y4P" firstAttribute="bottom" secondItem="ojb-Ng-AOD" secondAttribute="bottom" constant="589" id="fdw-Ow-8pr"/>
+                            <constraint firstAttribute="bottom" secondItem="UMc-6Y-FEk" secondAttribute="bottom" id="j6B-Mw-KX7"/>
+                            <constraint firstItem="UMc-6Y-FEk" firstAttribute="top" secondItem="A2l-zF-O8p" secondAttribute="top" id="tcz-Ro-iqQ"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="KbS-DE-2Ts" appends="YES" id="Jsz-VR-W0Q"/>
                             <outletCollection property="gestureRecognizers" destination="jzr-a7-Oa8" appends="YES" id="sci-Nw-RLG"/>
@@ -348,7 +353,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1005.6" y="136.69950738916256"/>
+            <point key="canvasLocation" x="1697" y="137"/>
         </scene>
         <!--Rest Screen-->
         <scene sceneID="lpI-Tv-8z3">
@@ -372,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxd-zd-dlZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1944.8" y="137.4384236453202"/>
+            <point key="canvasLocation" x="3186" y="137"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ZqK-hI-4Fa">
@@ -630,12 +635,12 @@ Recommended Fats</string>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1266.4000000000001" y="136.69950738916256"/>
+            <point key="canvasLocation" x="-1153" y="137"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="F4j-gR-FvL"/>
-        <segue reference="JsO-be-T1s"/>
+        <segue reference="1rd-av-Wan"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="linkColor">

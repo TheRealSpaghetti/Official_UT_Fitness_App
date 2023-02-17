@@ -46,7 +46,14 @@ class UserInformationController: UIViewController {
                 "UID": String(Auth.auth().currentUser!.uid),
                 "email": String(Auth.auth().currentUser!.email ?? "no email"),
                 "date": Date().timeIntervalSince1970
-            ]){(error) in
+            ])
+            
+            db.collection("Current Exercise").addDocument(data: [
+                "current workout": "Please Generate A Workout First",
+                "number of exercises": 0
+            ])
+            
+            {(error) in
                 if let e = error {
                     print(e)
                 } else {

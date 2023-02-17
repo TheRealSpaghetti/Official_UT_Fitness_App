@@ -10,29 +10,57 @@ import UIKit
 
 class HomePage: UIViewController {
     
+    let SessionCreator = Session()
+    var testArray = [2]
+    
+    //let sessionStarter = Ses
     override func viewDidLoad() {
-        
         //Login and Register
         //save user defaults to skip
         
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func leftSwipe(_ sender: UIScreenEdgePanGestureRecognizer) {
-        
-        print("wowee!")
-        self.performSegue(withIdentifier: "goToNutrition", sender: self)
+        //Do any additional setup after loading the view.
     }
     
     @IBAction func swipedLeft(_ sender: UISwipeGestureRecognizer) {
         print("swipe detected")
         self.performSegue(withIdentifier: "goToNutrition", sender: self)
     }
-    @IBAction func calculatePressed(_ sender: UIButton) {
+    
+    //Starts Workout
+    @IBAction func startWorkout(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        //SessionCreator.loadWorkoutSession()
+        print("button pressed")
         
-        self.performSegue(withIdentifier: "goToTimer", sender: self)
+    
+        if(testArray.isEmpty){
+            print("case 1\n")
+            print("array is empty")
+        } else if(testArray[0] != 0){
+            print("case 2\n")
+            testArray[0] -= 1
+            print(testArray)
+        } else if(testArray[0] == 0){
+            //code to finish workout because necessary condition was met
+            print("case 3\n")
+            testArray.removeFirst()
+            print(testArray)
+        }
+        
+
+        
+        //call method to add [Exercise], to add it to User Defaults
+        //defaults.set("Workout in Progress", forKey: "App Status")
+        //self.performSegue(withIdentifier: "startWorkout", sender: self)
     }
+    
+    
+    
+    
+    
+
+    
     
     @IBAction func goToUserData(_ sender: UIButton) {
         self.performSegue(withIdentifier: "HomeToInfo", sender: self)

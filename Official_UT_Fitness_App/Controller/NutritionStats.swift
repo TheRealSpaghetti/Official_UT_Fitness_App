@@ -20,7 +20,6 @@ class NutritionStats: UIViewController {
     @IBOutlet var pieView: PieChartView!
     
     //GOALS: 0 - Losing weight, 1 - Maintain weight, 2 - Gain weight
-
     var foodWizard = NutrientAnalysis(height: 0, weight: 0, goal: 0, male: false, activity: 0, age: 0)
     
     override func viewDidLoad() {
@@ -39,7 +38,6 @@ class NutritionStats: UIViewController {
                     print("oops")
                 } else {
                     for doc in querySnapshot!.documents {
-                        
                         let data = doc.data()
                           
                         //Code Segment: Sets User Stats from data retrieved from Firebase

@@ -12,11 +12,11 @@ class RestScreen: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
+    //VERY IMPORTANT
+    //CREATE: Function that checks if the UserDefault is empty, 0, and subtracts
+    
     /*
     // MARK: - Navigation
 
@@ -26,5 +26,4 @@ class RestScreen: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

@@ -14,7 +14,7 @@ struct NutrientAnalysis{
     let db = Firestore.firestore()
     var height: Double       //height in centimeters
     var weight: Double       //weight in kilograms
-    var goal: Int           //GOALS: 0 - Losing weight, 1 - Maintain weight, 2 - Gain weight
+    var goal: Int            //GOALS: 0 - Losing weight, 1 - Maintain weight, 2 - Gain weight
     var male: Bool
     var activity: Int
     var age: Int
