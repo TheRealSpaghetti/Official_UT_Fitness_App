@@ -9,21 +9,37 @@
 import UIKit
 
 class RestScreen: UIViewController {
-
+    
+    var exitStatus = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let defaults = UserDefaults.standard
+        var testArray = defaults.object(forKey:"Exercises_Left") as? [Int] ?? [Int]()
+        
+        if(testArray.isEmpty){
+            print("case 1\n")
+            print("array is empty")
+            exitStatus = true
+        } else if(testArray[0] != 0){
+            print("case 2\n")
+            testArray[0] -= 1
+        } else if(testArray[0] == 0){
+            //code to finish workout because necessary condition was met
+            print("case 3\n")
+            testArray.removeFirst()
+        }
+        defaults.set(testArray, forKey: "Exercises_Left")
     }
     
-    //VERY IMPORTANT
-    //CREATE: Function that checks if the UserDefault is empty, 0, and subtracts
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func nextScreenGesture(_ sender: UILongPressGestureRecognizer) {
+        if(exitStatus){
+            //show reward screen
+            self.performSegue(withIdentifier: "goToHome", sender: self)
+        } else {
+            print("get yo ass back to work")
+            self.performSegue(withIdentifier: "backToTraining", sender: self)
+        }
     }
-    */
 }

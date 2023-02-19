@@ -28,6 +28,8 @@ class LoginViewController: UIViewController {
                 if let e = error{
                     print(e)
                 } else {
+                    let defaults = UserDefaults.standard
+                    defaults.set(true, forKey: "isUserLoggedIn")
                     self.performSegue(withIdentifier: "LoginToMainscreen", sender: self)
                 }
             }

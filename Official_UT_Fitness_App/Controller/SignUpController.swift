@@ -27,6 +27,8 @@ class SignUpController: UIViewController {
                 if let e = error{
                     print(e.localizedDescription)
                 } else {
+                    let defaults = UserDefaults.standard
+                    defaults.set(true, forKey: "isUserLoggedIn")
                     self.performSegue(withIdentifier: "RegisterToHome", sender: self)
                 }
             }

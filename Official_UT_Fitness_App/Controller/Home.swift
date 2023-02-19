@@ -9,10 +9,8 @@
 import UIKit
 
 class HomePage: UIViewController {
-    
     let SessionCreator = Session()
-    var testArray = [2]
-    
+  
     //let sessionStarter = Ses
     override func viewDidLoad() {
         //Login and Register
@@ -29,37 +27,15 @@ class HomePage: UIViewController {
     
     //Starts Workout
     @IBAction func startWorkout(_ sender: UIButton) {
+        
         let defaults = UserDefaults.standard
-        //SessionCreator.loadWorkoutSession()
-        print("button pressed")
+        let totalExerciseNumber = defaults.object(forKey:"Total_Exercises") as? Int ?? 0
+        let setsLeft = defaults.object(forKey:"Exercises_Left") as? [Int] ?? [Int]()
         
-    
-        if(testArray.isEmpty){
-            print("case 1\n")
-            print("array is empty")
-        } else if(testArray[0] != 0){
-            print("case 2\n")
-            testArray[0] -= 1
-            print(testArray)
-        } else if(testArray[0] == 0){
-            //code to finish workout because necessary condition was met
-            print("case 3\n")
-            testArray.removeFirst()
-            print(testArray)
-        }
-        
-
-        
-        //call method to add [Exercise], to add it to User Defaults
-        //defaults.set("Workout in Progress", forKey: "App Status")
-        //self.performSegue(withIdentifier: "startWorkout", sender: self)
+        SessionCreator.loadWorkoutSession()
+        SessionCreator.updateSessionUI(indexToReadFrom: (totalExerciseNumber - setsLeft.count))
+        self.performSegue(withIdentifier: "startWorkout", sender: self)
     }
-    
-    
-    
-    
-    
-
     
     
     @IBAction func goToUserData(_ sender: UIButton) {

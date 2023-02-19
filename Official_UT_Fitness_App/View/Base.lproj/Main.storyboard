@@ -272,7 +272,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="111.57635467980296"/>
+            <point key="canvasLocation" x="137" y="137"/>
         </scene>
         <!--Training Session-->
         <scene sceneID="QA2-bS-5c1">
@@ -373,11 +373,24 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fPC-1N-7cL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ru9-qt-CNJ" appends="YES" id="RMM-Z2-wgd"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <segue destination="lkq-xS-Cin" kind="presentation" identifier="backToTraining" modalPresentationStyle="fullScreen" id="kfy-1B-p4V"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToHome" modalPresentationStyle="fullScreen" id="6gy-Fc-g35"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxd-zd-dlZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="ru9-qt-CNJ">
+                    <connections>
+                        <action selector="nextScreenGesture:" destination="68h-tH-YS6" id="n26-sH-kmt"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3186" y="137"/>
+            <point key="canvasLocation" x="3073" y="137"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ZqK-hI-4Fa">
@@ -635,12 +648,13 @@ Recommended Fats</string>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1153" y="137"/>
+            <point key="canvasLocation" x="-1218" y="137"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="F4j-gR-FvL"/>
-        <segue reference="1rd-av-Wan"/>
+        <segue reference="Jcy-bm-wlm"/>
+        <segue reference="mci-Yr-EuR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="linkColor">

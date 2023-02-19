@@ -30,6 +30,7 @@
 		8C19AC96295274C100AC572F /* fasterbackground.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8C19AC95295274C100AC572F /* fasterbackground.gif */; };
 		8C19AC9C29537D3800AC572F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C19AC552952674200AC572F /* Assets.xcassets */; };
 		8C2FA9512961175700E6F8BE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2FA9502961175700E6F8BE /* Constants.swift */; };
+		8C3EBF1829A1C58C00F6CB66 /* background_gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8C3EBF1729A1C58B00F6CB66 /* background_gif.gif */; };
 		8C5DBFA1297B19EB003B23E9 /* ExerciseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5DBFA0297B19EB003B23E9 /* ExerciseGenerator.swift */; };
 		8C5DBFA6297C927C003B23E9 /* GenerateWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5DBFA5297C927C003B23E9 /* GenerateWorkout.swift */; };
 		8C66728029647B0B00C638CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C66727F29647B0B00C638CA /* GoogleService-Info.plist */; };
@@ -91,6 +92,7 @@
 		8C19AC93295274A400AC572F /* training_in_session.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = training_in_session.gif; sourceTree = "<group>"; };
 		8C19AC95295274C100AC572F /* fasterbackground.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fasterbackground.gif; sourceTree = "<group>"; };
 		8C2FA9502961175700E6F8BE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8C3EBF1729A1C58B00F6CB66 /* background_gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = background_gif.gif; sourceTree = "<group>"; };
 		8C5DBFA0297B19EB003B23E9 /* ExerciseGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGenerator.swift; sourceTree = "<group>"; };
 		8C5DBFA5297C927C003B23E9 /* GenerateWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateWorkout.swift; sourceTree = "<group>"; };
 		8C66727F29647B0B00C638CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -220,11 +222,11 @@
 				8C5DBFA0297B19EB003B23E9 /* ExerciseGenerator.swift */,
 				8C19AC8329526B9200AC572F /* NutritionAnalysis.swift */,
 				8CDA1607299AD7A400464B6C /* Session.swift */,
-				8C19AC8529526BAD00AC572F /* GifLoader.swift */,
 				8C19AC8929526BD900AC572F /* SegueRightAnimation.swift */,
 				8C19AC8729526BC400AC572F /* SegueLeftAnimation.swift */,
 				8C19AC8129526A4500AC572F /* SecondsToString.swift */,
 				8CEFFA5829539E52005B52DB /* NSUIColor+Hex.swift */,
+				8C19AC8529526BAD00AC572F /* GifLoader.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,6 +250,7 @@
 				8C6CECFA29732A5C0087E36E /* EnterUserInfo.swift */,
 				8C19AC93295274A400AC572F /* training_in_session.gif */,
 				8C19AC95295274C100AC572F /* fasterbackground.gif */,
+				8C3EBF1729A1C58B00F6CB66 /* background_gif.gif */,
 				8CD14A7F2970DC9B00E01BC6 /* LoginViewController.swift */,
 				8CD14A812970DD0300E01BC6 /* SignUpController.swift */,
 			);
@@ -368,6 +371,7 @@
 				8C19AC96295274C100AC572F /* fasterbackground.gif in Resources */,
 				8C19AC542952674100AC572F /* Main.storyboard in Resources */,
 				8C19AC9C29537D3800AC572F /* Assets.xcassets in Resources */,
+				8C3EBF1829A1C58C00F6CB66 /* background_gif.gif in Resources */,
 				8C66728029647B0B00C638CA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

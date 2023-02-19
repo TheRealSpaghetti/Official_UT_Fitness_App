@@ -10,53 +10,47 @@ import UIKit
 import Firebase
 
 class TrainingSession: UIViewController {
+
+    //Displayed on the UI
     @IBOutlet weak var exerciseLabel: UILabel!
     @IBOutlet weak var backgroundGif: UIImageView!
+    
+    //Elements needed to fetch data & update the UI
     let db = Firestore.firestore()
+    
+    //Elements needed to draw the timer
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
-    var timeLeft: TimeInterval = 69
+    let strokeIt = CABasicAnimation(keyPath: "strokeEnd")
+    var timeLeft: TimeInterval = 5                         //number of seconds on the timer
     var rounded: Int {return Int(round(timeLeft))}
     var endTime: Date?
     var timeLabel =  UILabel()
     var timer = Timer()
     var timeStringConverter = TimeStringGetter()
+    
+    //Makes sure events only happen once
     var tapCount = 0
-    var word = "this has not been changed"
+    var holdCount = 0
+    var exerciseSkipped = false
+   
     
     override func viewDidLoad() {
-        //sets GIF background
-        let squareGif = UIImage.gifImageWithName("fasterbackground")
-        let userEmail = String(Auth.auth().currentUser!.email ?? "no email")
-        backgroundGif.image = squareGif
-        backgroundGif.image = squareGif
-        
-        let appStatus = UserDefaults.standard.string(forKey: "App Status")
-        print(appStatus as Any)
-        
-        db.collection("Current Workout")
-            .whereField("email", isEqualTo: userEmail)
-            .order(by: "date", descending: true)
-            .limit(to: 1)
-            .getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    for doc in querySnapshot!.documents {
-                        let data = doc.data()
-                        
-                        DispatchQueue.main.async { [self] in
-                            print(data["workout type"]!)
-
-                            exerciseLabel.text = "Ooga Booga"
-                        }
-                    }
-                }
-        }
-        
-        print("x")
         super.viewDidLoad()
-        tapCount = 0
+        
+        //Sets GIF background
+        let squareGif = UIImage.gifImageWithName("background_gif")
+        
+        //Fetches data from Firebase to display current exercise information
+        backgroundGif.image = squareGif
+        
+        let defaults = UserDefaults.standard
+        let testArray = defaults.object(forKey:"Exercises_Left") as? [Int] ?? [Int]()
+        print("Train Screen \(testArray)")
+        let infoToLoad = defaults.object(forKey:"Current_Exercise_Info") as? [String] ?? [String]()
+        exerciseLabel.text = infoToLoad[0]
+        
+        //Creates timer
         drawBgShape()
         drawTimeLeftShape()
         addTimeLabel()
@@ -64,25 +58,25 @@ class TrainingSession: UIViewController {
 
     @IBAction func exerciseStarted(_ sender: UITapGestureRecognizer) {
         if(tapCount == 0){
-            // here you define the fromValue, toValue and duration of your animation
+            // Here you define the fromValue, toValue and duration of your animation
             strokeIt.fromValue = 1
             strokeIt.toValue = -0.0001
             strokeIt.duration = timeLeft
             strokeIt.fillMode = CAMediaTimingFillMode.forwards
             strokeIt.isRemovedOnCompletion = false
-            // add the animation to your timeLeftShapeLayer
+            
+            //Add the animation to your timeLeftShapeLayer
             timeLeftShapeLayer.add(strokeIt, forKey: nil)
-            // define the future end time by adding the timeLeft to now Date()
+            
+            //Define the future end time by adding the timeLeft to now Date()
             endTime = Date().addingTimeInterval(timeLeft)
             timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
             tapCount+=1
         }
     }
     
-    // here you create your basic animation object to animate the strokeEnd
-    let strokeIt = CABasicAnimation(keyPath: "strokeEnd")
-    
     func drawBgShape() {
+        //Creates the basic animation object to animate the strokeEnd
         bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY), radius:
             150, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).cgPath
         bgShapeLayer.strokeColor = UIColor.darkGray.cgColor
@@ -90,6 +84,7 @@ class TrainingSession: UIViewController {
         bgShapeLayer.lineWidth = 15
         view.layer.addSublayer(bgShapeLayer)
     }
+    
     func drawTimeLeftShape() {
         timeLeftShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY), radius:
             150, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).cgPath
@@ -117,17 +112,25 @@ class TrainingSession: UIViewController {
         } else {
             timeLabel.text = "00:00"
             timer.invalidate()
-            self.performSegue(withIdentifier: "goToRestScreen", sender: self)
+
+            if(exerciseSkipped == false){
+                self.performSegue(withIdentifier: "goToRestScreen", sender: self)
+            }
         }
     }
     
     @IBAction func endEarly(_ sender: UILongPressGestureRecognizer) {
-        
-        self.performSegue(withIdentifier: "goToRestScreen", sender: self)
+        if(holdCount == 0){
+            print("held detected")
+            exerciseSkipped = true
+            //Allows users to finish the set early before the timer ends
+            self.performSegue(withIdentifier: "goToRestScreen", sender: self)
+            holdCount += 1
+        }
     }
-    
 }
-    
+
+//Extensions for formatting the UI
 extension Int {
     var degreesToRadians : CGFloat {
         return CGFloat(self) * .pi / 180

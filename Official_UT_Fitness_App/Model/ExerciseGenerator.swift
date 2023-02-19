@@ -325,4 +325,3 @@ extension Float {
     return Int((value / Float(multiples)).rounded(.up)) * multiples
   }
 }
-
