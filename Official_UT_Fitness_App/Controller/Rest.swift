@@ -38,7 +38,6 @@ class RestScreen: UIViewController {
             //show reward screen
             self.performSegue(withIdentifier: "goToHome", sender: self)
         } else {
-            print("get yo ass back to work")
             self.performSegue(withIdentifier: "backToTraining", sender: self)
         }
     }

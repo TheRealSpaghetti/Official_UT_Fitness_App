@@ -19,7 +19,7 @@ class SignUpController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func UserCreatePressed(_ sender: UIButton) {
+    @IBAction func CreateAccount(_ sender: UIButton) {
         if let email = emailTextfield.text, let password = passwordTextfield.text{
             
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in

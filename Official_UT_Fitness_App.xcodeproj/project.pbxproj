@@ -40,6 +40,7 @@
 		8CDA1608299AD7A400464B6C /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDA1607299AD7A400464B6C /* Session.swift */; };
 		8CED00D22996AB6E0094766E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED00D12996AB6E0094766E /* Exercise.swift */; };
 		8CEFFA5929539E52005B52DB /* NSUIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEFFA5829539E52005B52DB /* NSUIColor+Hex.swift */; };
+		8CF681FE29A9D555003D4888 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF681FD29A9D555003D4888 /* UserInfo.swift */; };
 		F9106865FF1F741507187DF1 /* Pods_Official_UT_Fitness_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6874B3A2A8FA13C935A042B2 /* Pods_Official_UT_Fitness_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		8CDA1607299AD7A400464B6C /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		8CED00D12996AB6E0094766E /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		8CEFFA5829539E52005B52DB /* NSUIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUIColor+Hex.swift"; sourceTree = "<group>"; };
+		8CF681FD29A9D555003D4888 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		9663711416A9B86585B2B085 /* Pods-Official_UT_Fitness_AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Official_UT_Fitness_AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Official_UT_Fitness_AppTests/Pods-Official_UT_Fitness_AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A3DDDEAAF28C6737115C923C /* Pods_Official_UT_Fitness_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Official_UT_Fitness_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFCE74EBA9005058ACE6997 /* Pods-Official_UT_Fitness_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Official_UT_Fitness_App.release.xcconfig"; path = "Target Support Files/Pods-Official_UT_Fitness_App/Pods-Official_UT_Fitness_App.release.xcconfig"; sourceTree = "<group>"; };
@@ -222,11 +224,9 @@
 				8C5DBFA0297B19EB003B23E9 /* ExerciseGenerator.swift */,
 				8C19AC8329526B9200AC572F /* NutritionAnalysis.swift */,
 				8CDA1607299AD7A400464B6C /* Session.swift */,
-				8C19AC8929526BD900AC572F /* SegueRightAnimation.swift */,
-				8C19AC8729526BC400AC572F /* SegueLeftAnimation.swift */,
 				8C19AC8129526A4500AC572F /* SecondsToString.swift */,
-				8CEFFA5829539E52005B52DB /* NSUIColor+Hex.swift */,
-				8C19AC8529526BAD00AC572F /* GifLoader.swift */,
+				8CF681FD29A9D555003D4888 /* UserInfo.swift */,
+				8CF681FF29A9D563003D4888 /* Auxilary */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +255,17 @@
 				8CD14A812970DD0300E01BC6 /* SignUpController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		8CF681FF29A9D563003D4888 /* Auxilary */ = {
+			isa = PBXGroup;
+			children = (
+				8C19AC8929526BD900AC572F /* SegueRightAnimation.swift */,
+				8C19AC8729526BC400AC572F /* SegueLeftAnimation.swift */,
+				8CEFFA5829539E52005B52DB /* NSUIColor+Hex.swift */,
+				8C19AC8529526BAD00AC572F /* GifLoader.swift */,
+			);
+			path = Auxilary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -520,6 +531,7 @@
 				8C19AC4F2952674100AC572F /* SceneDelegate.swift in Sources */,
 				8CD14A802970DC9B00E01BC6 /* LoginViewController.swift in Sources */,
 				8C19AC8C29526D2F00AC572F /* NutritionStats.swift in Sources */,
+				8CF681FE29A9D555003D4888 /* UserInfo.swift in Sources */,
 				8C19AC8829526BC400AC572F /* SegueLeftAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

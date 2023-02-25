@@ -53,10 +53,11 @@ class NutritionStats: UIViewController {
                             //Code Segment: Generates Pie Chart
                             self.foodWizard.updateInfo(height: setHeight, weight: setWeight, goal: setGoal, male: setMale, activity: setActivity, age: setAge)
                             self.setupPieChart()
-                            self.calorieLabel.text = String(format: "%.2f" + " kCal", foodWizard.getCalories())
-                            self.carbLabel.text = "\(foodWizard.getCarbs()) grams"
-                            self.proteinLabel.text = "\(foodWizard.getProtein()) grams"
-                            self.fatsLabel.text = "\(foodWizard.getFats()) grams"
+                            print(foodWizard.getCalories())
+                            //self.calorieLabel.text = String(format: "%.2f" + " kCal", foodWizard.getCalories())
+                            //self.carbLabel.text = "\(foodWizard.getCarbs()) grams"
+                            //self.proteinLabel.text = "\(foodWizard.getProtein()) grams"
+                            //self.fatsLabel.text = "\(foodWizard.getFats()) grams"
                         }
                     }
                 }
