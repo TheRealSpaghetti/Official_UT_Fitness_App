@@ -32,7 +32,6 @@ class LoginViewController: UIViewController {
                     self.performSegue(withIdentifier: "LoginToMainscreen", sender: self)
                 }
             }
-            
         }
     }
 

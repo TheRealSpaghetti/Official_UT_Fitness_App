@@ -16,8 +16,7 @@ class UserInformationController: UIViewController {
     @IBOutlet weak var weightInput: UITextField!
     @IBOutlet weak var goalInput: UITextField!
     @IBOutlet weak var sexInput: UITextField!
-    @IBOutlet weak var activityInput: UITextField!
-    @IBOutlet weak var experienceInput: UITextField!
+    @IBOutlet weak var activityLevel: UITextField!
     @IBOutlet weak var ageInput: UITextField!
     
     override func viewDidLoad() {
@@ -25,46 +24,22 @@ class UserInformationController: UIViewController {
     }
     
     @IBAction func setUserData(_ sender: UIButton) {
-        
-        if let userHeight = heightInput.text, let userWeight = weightInput.text, let userGoal = goalInput.text, let userSex = sexInput.text, let userActivity = activityInput.text, let userExperience = experienceInput.text, let userAge = ageInput.text{
+        if let userHeight = heightInput.text, let userWeight = weightInput.text, let userGoal = goalInput.text, let userSex = sexInput.text, let userActivity = activityLevel.text, let userAge = ageInput.text{
             
-            var maleBool = true
+            var dataArray = [String]()
+            dataArray.append(userHeight)
+            dataArray.append(userWeight)
+            dataArray.append(userGoal)
+            dataArray.append(userAge)
+            dataArray.append(userActivity)
+            dataArray.append(userSex)
             
-            if(Int(userSex) == 0){
-                maleBool = false
-            }
-            
-            //ADD CODE: Set default value for user value
-            db.collection("UserData").addDocument(data: [
-                "height": Double(userHeight),
-                "weight": Double(userWeight),
-                "goal": Int(userGoal),
-                "sex": maleBool,
-                "activity": Int(userActivity),
-                "experience": Int(userExperience),
-                "age": Int(userAge),
-                "UID": String(Auth.auth().currentUser!.uid),
-                "email": String(Auth.auth().currentUser!.email ?? "no email"),
-                "date": Date().timeIntervalSince1970
-            ])
-            
-            db.collection("Current Exercise").addDocument(data: [
-                "current workout": "Please Generate A Workout First",
-                "number of exercises": 0
-            ])
-            
-            {(error) in
-                if let e = error {
-                    print(e)
-                } else {
-                    print("Successfully saved data")
-                }
-            }
+            UserInfo.instance.updateUserInfo(data: dataArray)
         }
     }
     
+        
     @IBAction func homeButtonPressed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goBackHome", sender: self)
     }
-    
 }

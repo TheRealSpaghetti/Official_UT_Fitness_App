@@ -29,7 +29,7 @@ class SignUpController: UIViewController {
                 } else {
                     let defaults = UserDefaults.standard
                     defaults.set(true, forKey: "isUserLoggedIn")
-                    self.performSegue(withIdentifier: "RegisterToHome", sender: self)
+                    self.performSegue(withIdentifier: "goToSetUserInfo", sender: self)
                 }
             }
         }
