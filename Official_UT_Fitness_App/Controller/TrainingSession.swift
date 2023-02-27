@@ -33,7 +33,6 @@ class TrainingSession: UIViewController {
     var tapCount = 0
     var holdCount = 0
     var exerciseSkipped = false
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()

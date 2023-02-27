@@ -38,7 +38,6 @@ class UserInformationController: UIViewController {
         }
     }
     
-        
     @IBAction func homeButtonPressed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goBackHome", sender: self)
     }
