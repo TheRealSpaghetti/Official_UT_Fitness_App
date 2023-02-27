@@ -10,10 +10,17 @@ import UIKit
 
 class RestScreen: UIViewController {
     
+    @IBOutlet weak var restBackground: UIImageView!
+    
     var exitStatus = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Sets GIF background
+        let backGroundGif = UIImage.gifImageWithName("background_gif")
+        
+        restBackground.image = backGroundGif
         
         let defaults = UserDefaults.standard
         var testArray = defaults.object(forKey:"Exercises_Left") as? [Int] ?? [Int]()

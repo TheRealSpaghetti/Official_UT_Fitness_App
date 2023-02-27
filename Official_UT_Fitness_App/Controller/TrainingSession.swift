@@ -40,15 +40,15 @@ class TrainingSession: UIViewController {
         
         //Sets GIF background
         let squareGif = UIImage.gifImageWithName("background_gif")
-        
-        //Fetches data from Firebase to display current exercise information
         backgroundGif.image = squareGif
         
+        //Fetches data from Firebase to display current exercise information
         let defaults = UserDefaults.standard
         let testArray = defaults.object(forKey:"Exercises_Left") as? [Int] ?? [Int]()
         print("Train Screen \(testArray)")
         let infoToLoad = defaults.object(forKey:"Current_Exercise_Info") as? [String] ?? [String]()
-        exerciseLabel.text = infoToLoad[0]
+        //exerciseLabel.text = infoToLoad[0]
+        exerciseLabel.text = "Beep Boops"
         
         //Creates timer
         drawBgShape()

@@ -37,7 +37,6 @@ class HomePage: UIViewController {
         self.performSegue(withIdentifier: "startWorkout", sender: self)
     }
     
-    
     @IBAction func goToUserData(_ sender: UIButton) {
         self.performSegue(withIdentifier: "HomeToInfo", sender: self)
     }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,7 +13,7 @@
             <objects>
                 <viewController storyboardIdentifier="UserData" id="MJz-7q-O1w" customClass="UserInformationController" customModule="Official_UT_Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bVi-sx-YvE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m1J-Uu-fyv">
@@ -135,7 +135,7 @@
             <objects>
                 <viewController id="1jl-r7-R8g" customClass="GenerateWorkout" customModule="Official_UT_Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dnN-LC-Px8" customClass="GenerateWor">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5t1-Fc-tPH">
@@ -201,7 +201,7 @@
             <objects>
                 <viewController storyboardIdentifier="HomePage" id="BYZ-38-t0r" customClass="HomePage" customModule="Official_UT_Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Q8-sj-ovt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWb-Od-9jj">
@@ -237,6 +237,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="startWorkout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RdI-LE-SVJ"/>
+                                    <segue destination="MQi-3T-7Bo" kind="presentation" identifier="startWorkout" modalPresentationStyle="fullScreen" id="kVK-uc-FSL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -253,7 +254,6 @@
                         </connections>
                     </view>
                     <connections>
-                        <segue destination="lkq-xS-Cin" kind="presentation" identifier="startWorkout" modalPresentationStyle="fullScreen" id="Jcy-bm-wlm"/>
                         <segue destination="ayK-oA-Hk9" kind="presentation" identifier="goToNutrition" customClass="SegueFromLeft" customModule="Official_UT_Fitness_App" customModuleProvider="target" modalPresentationStyle="fullScreen" id="bP4-OR-00x"/>
                         <segue destination="MJz-7q-O1w" kind="presentation" identifier="HomeToInfo" modalPresentationStyle="fullScreen" id="5oG-sS-SoP"/>
                         <segue destination="1jl-r7-R8g" kind="presentation" identifier="goToGeneratePage" modalPresentationStyle="fullScreen" id="6eb-sv-b1h"/>
@@ -274,137 +274,34 @@
             </objects>
             <point key="canvasLocation" x="137" y="137"/>
         </scene>
-        <!--Training Session-->
-        <scene sceneID="QA2-bS-5c1">
-            <objects>
-                <viewController storyboardIdentifier="TrainingController" id="lkq-xS-Cin" customClass="TrainingSession" customModule="Official_UT_Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="A2l-zF-O8p">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UMc-6Y-FEk">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <gestureRecognizers/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="new_box" translatesAutoresizingMaskIntoConstraints="NO" id="64u-Kg-PxX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set: 1/5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXZ-gy-ArD">
-                                <rect key="frame" x="285" y="766" width="57" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojb-Ng-AOD" userLabel="Display Info">
-                                <rect key="frame" x="89" y="113" width="197" height="76"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Bench Press" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdC-Ia-Qoa">
-                                        <rect key="frame" x="1" y="37" width="195" height="40.666666666666657"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                        <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise #1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myi-lx-RkV">
-                                        <rect key="frame" x="55" y="5" width="86" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="myi-lx-RkV" firstAttribute="leading" secondItem="ojb-Ng-AOD" secondAttribute="leading" constant="55" id="0tK-Tz-1Te"/>
-                                    <constraint firstItem="KdC-Ia-Qoa" firstAttribute="top" secondItem="myi-lx-RkV" secondAttribute="bottom" constant="11" id="TkS-TH-ZgY"/>
-                                    <constraint firstAttribute="trailing" secondItem="myi-lx-RkV" secondAttribute="trailing" constant="56" id="di3-tp-EIg"/>
-                                    <constraint firstItem="myi-lx-RkV" firstAttribute="top" secondItem="ojb-Ng-AOD" secondAttribute="top" constant="5" id="xjO-Ly-AXD"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJF-Wk-jZs">
-                                <rect key="frame" x="32" y="737" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlQ-Ta-ieF">
-                                <rect key="frame" x="166" y="737" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ue-Rx-li7">
-                                <rect key="frame" x="300" y="737" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="wMZ-LG-Y4P"/>
-                        <color key="backgroundColor" red="0.19980379940000001" green="0.48169642689999997" blue="0.77313679459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="UMc-6Y-FEk" firstAttribute="leading" secondItem="A2l-zF-O8p" secondAttribute="leading" id="4qF-ff-zyG"/>
-                            <constraint firstItem="UMc-6Y-FEk" firstAttribute="trailing" secondItem="A2l-zF-O8p" secondAttribute="trailing" id="DbM-UJ-8ei"/>
-                            <constraint firstItem="ojb-Ng-AOD" firstAttribute="centerX" secondItem="UMc-6Y-FEk" secondAttribute="centerX" id="MZA-WN-Q7V"/>
-                            <constraint firstItem="ojb-Ng-AOD" firstAttribute="top" secondItem="wMZ-LG-Y4P" secondAttribute="top" constant="66" id="a1D-6B-moU"/>
-                            <constraint firstItem="wMZ-LG-Y4P" firstAttribute="bottom" secondItem="ojb-Ng-AOD" secondAttribute="bottom" constant="589" id="fdw-Ow-8pr"/>
-                            <constraint firstAttribute="bottom" secondItem="UMc-6Y-FEk" secondAttribute="bottom" id="j6B-Mw-KX7"/>
-                            <constraint firstItem="UMc-6Y-FEk" firstAttribute="top" secondItem="A2l-zF-O8p" secondAttribute="top" id="tcz-Ro-iqQ"/>
-                        </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="KbS-DE-2Ts" appends="YES" id="Jsz-VR-W0Q"/>
-                            <outletCollection property="gestureRecognizers" destination="jzr-a7-Oa8" appends="YES" id="sci-Nw-RLG"/>
-                        </connections>
-                    </view>
-                    <connections>
-                        <outlet property="backgroundGif" destination="UMc-6Y-FEk" id="Pp4-0s-tDm"/>
-                        <outlet property="exerciseLabel" destination="KdC-Ia-Qoa" id="L2c-xE-qfj"/>
-                        <segue destination="68h-tH-YS6" kind="presentation" identifier="goToRestScreen" modalPresentationStyle="fullScreen" id="H0h-lN-ADb"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="&quot;goToHomeScreen&quot;" customClass="SegueFromRight" customModule="Official_UT_Fitness_App" customModuleProvider="target" modalPresentationStyle="fullScreen" id="1rd-av-Wan"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4fn-rV-g4l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="KbS-DE-2Ts">
-                    <connections>
-                        <action selector="exerciseStarted:" destination="lkq-xS-Cin" id="qma-zh-aHT"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="1.5" id="jzr-a7-Oa8">
-                    <connections>
-                        <action selector="endEarly:" destination="lkq-xS-Cin" id="j7n-4P-4IF"/>
-                    </connections>
-                </pongPressGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="1696.8" y="136.69950738916256"/>
-        </scene>
         <!--Rest Screen-->
         <scene sceneID="lpI-Tv-8z3">
             <objects>
                 <viewController id="68h-tH-YS6" customClass="RestScreen" customModule="Official_UT_Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LMZ-mv-c0b">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Take it easy!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTK-eP-fK6">
-                                <rect key="frame" x="83" y="302" width="209" height="209"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wOy-nN-0mt">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <gestureRecognizers/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fPC-1N-7cL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="wOy-nN-0mt" firstAttribute="top" secondItem="LMZ-mv-c0b" secondAttribute="top" id="FUs-Os-chn"/>
+                            <constraint firstItem="wOy-nN-0mt" firstAttribute="leading" secondItem="fPC-1N-7cL" secondAttribute="leading" id="Xy2-cP-T7j"/>
+                            <constraint firstItem="wOy-nN-0mt" firstAttribute="trailing" secondItem="fPC-1N-7cL" secondAttribute="trailing" id="nF9-qY-drm"/>
+                            <constraint firstAttribute="bottom" secondItem="wOy-nN-0mt" secondAttribute="bottom" id="z1x-ej-aE7"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="ru9-qt-CNJ" appends="YES" id="RMM-Z2-wgd"/>
                         </connections>
                     </view>
                     <connections>
-                        <segue destination="lkq-xS-Cin" kind="presentation" identifier="backToTraining" modalPresentationStyle="fullScreen" id="kfy-1B-p4V"/>
+                        <outlet property="restBackground" destination="wOy-nN-0mt" id="eeQ-4W-nR2"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToHome" modalPresentationStyle="fullScreen" id="6gy-Fc-g35"/>
                     </connections>
                 </viewController>
@@ -415,18 +312,18 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3073" y="137"/>
+            <point key="canvasLocation" x="3072.5581395348836" y="136.48068669527899"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ZqK-hI-4Fa">
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" id="Vry-wq-com" customClass="LoginViewController" customModule="Official_UT_Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nHN-0V-E2O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="31313131" translatesAutoresizingMaskIntoConstraints="NO" id="6Qn-es-tma">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="New Banner" translatesAutoresizingMaskIntoConstraints="NO" id="qao-kX-0Z4">
                                 <rect key="frame" x="0.0" y="47" width="375" height="200"/>
@@ -530,11 +427,11 @@
             <objects>
                 <viewController id="d2k-FD-8pO" customClass="SignUpController" customModule="Official_UT_Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="grh-cJ-gA5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="31313131" translatesAutoresizingMaskIntoConstraints="NO" id="MCv-MM-bTl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ZE-cW-12B">
                                 <rect key="frame" x="48" y="400" width="279" height="34"/>
@@ -612,7 +509,7 @@
                                     <segue destination="MJz-7q-O1w" kind="presentation" identifier="goToSetUserInfo" modalPresentationStyle="fullScreen" id="YOo-2f-A37"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Banner_2" translatesAutoresizingMaskIntoConstraints="NO" id="3qg-HM-Vob">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SignUp_Heading" translatesAutoresizingMaskIntoConstraints="NO" id="3qg-HM-Vob">
                                 <rect key="frame" x="0.0" y="159" width="375" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -641,7 +538,7 @@
             <objects>
                 <viewController id="ayK-oA-Hk9" customClass="NutritionStats" customModule="Official_UT_Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vfg-pa-O4h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="New_Data_BG" translatesAutoresizingMaskIntoConstraints="NO" id="FR9-rc-VzS">
@@ -675,19 +572,149 @@
             </objects>
             <point key="canvasLocation" x="-1218.4000000000001" y="136.69950738916256"/>
         </scene>
+        <!--Training Session-->
+        <scene sceneID="YM8-T1-oQB">
+            <objects>
+                <tapGestureRecognizer id="AEE-hF-hbF">
+                    <connections>
+                        <action selector="exerciseStarted:" destination="MQi-3T-7Bo" id="O9C-Xh-taf"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tuo-oc-0qN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="1.5" id="O1Y-fe-yla">
+                    <connections>
+                        <action selector="endEarly:" destination="MQi-3T-7Bo" id="XAr-dd-V1T"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <viewController storyboardIdentifier="TrainingController" id="MQi-3T-7Bo" customClass="TrainingSession" customModule="Official_UT_Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="psY-Wi-Ajr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="97i-Dh-zAe">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Box" translatesAutoresizingMaskIntoConstraints="NO" id="eag-c7-2m9" userLabel="Box">
+                                <rect key="frame" x="0.0" y="752" width="393" height="100"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header" translatesAutoresizingMaskIntoConstraints="NO" id="KHh-yg-5SG">
+                                <rect key="frame" x="46.666666666666657" y="99" width="300" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="3wE-IK-7LF"/>
+                                    <constraint firstAttribute="height" constant="110" id="UXB-3o-Xu3"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2n-pR-Wb3">
+                                <rect key="frame" x="0.0" y="752" width="393" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:25lb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdk-bx-DUG">
+                                        <rect key="frame" x="143.66666666666666" y="40.666666666666629" width="106" height="18.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rep:8x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWw-4N-qcd">
+                                        <rect key="frame" x="35" y="40.666666666666629" width="58" height="19"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set:1/5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbS-8M-kLl">
+                                        <rect key="frame" x="295.33333333333331" y="40.666666666666629" width="67.666666666666686" height="18.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                        <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="DWw-4N-qcd" firstAttribute="leading" secondItem="y2n-pR-Wb3" secondAttribute="leading" constant="35" id="CQi-hS-C6J"/>
+                                    <constraint firstItem="pdk-bx-DUG" firstAttribute="centerX" secondItem="y2n-pR-Wb3" secondAttribute="centerX" id="E3k-HJ-Fdj"/>
+                                    <constraint firstItem="ZbS-8M-kLl" firstAttribute="centerY" secondItem="y2n-pR-Wb3" secondAttribute="centerY" id="FL9-gU-niW"/>
+                                    <constraint firstItem="pdk-bx-DUG" firstAttribute="centerY" secondItem="y2n-pR-Wb3" secondAttribute="centerY" id="OQL-y4-5Ev"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZbS-8M-kLl" secondAttribute="trailing" constant="30" id="kJy-nV-Gxc"/>
+                                    <constraint firstItem="DWw-4N-qcd" firstAttribute="centerY" secondItem="y2n-pR-Wb3" secondAttribute="centerY" id="nJL-Y9-CM7"/>
+                                    <constraint firstItem="pdk-bx-DUG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DWw-4N-qcd" secondAttribute="trailing" constant="8" symbolic="YES" id="rjj-bf-RxH"/>
+                                    <constraint firstItem="ZbS-8M-kLl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pdk-bx-DUG" secondAttribute="trailing" constant="8" symbolic="YES" id="xZe-Cu-qKm"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bw-Wg-FWk" userLabel="Banner">
+                                <rect key="frame" x="72" y="99" width="249" height="110"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bench Press" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dd-3P-pdx">
+                                        <rect key="frame" x="34" y="44.333333333333343" width="181" height="40.666666666666657"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                        <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise #1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34P-dY-nym">
+                                        <rect key="frame" x="81.666666666666657" y="18.333333333333329" width="86" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1dd-3P-pdx" firstAttribute="top" secondItem="34P-dY-nym" secondAttribute="bottom" constant="5" id="6cS-mP-aFZ"/>
+                                    <constraint firstItem="1dd-3P-pdx" firstAttribute="centerX" secondItem="8bw-Wg-FWk" secondAttribute="centerX" id="BM8-Kg-vcb"/>
+                                    <constraint firstAttribute="bottom" secondItem="1dd-3P-pdx" secondAttribute="bottom" constant="25" id="TBd-hh-rpE"/>
+                                    <constraint firstItem="34P-dY-nym" firstAttribute="centerX" secondItem="8bw-Wg-FWk" secondAttribute="centerX" id="nQ0-Dw-3RT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xja-D5-kz4"/>
+                        <color key="backgroundColor" red="0.19980379940000001" green="0.48169642689999997" blue="0.77313679459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="y2n-pR-Wb3" firstAttribute="leading" secondItem="xja-D5-kz4" secondAttribute="leading" id="1gI-Il-l00"/>
+                            <constraint firstItem="y2n-pR-Wb3" firstAttribute="leading" secondItem="xja-D5-kz4" secondAttribute="leading" id="2nS-WR-cxZ"/>
+                            <constraint firstItem="8bw-Wg-FWk" firstAttribute="centerX" secondItem="psY-Wi-Ajr" secondAttribute="centerX" id="7DU-Gy-Ccr"/>
+                            <constraint firstAttribute="bottom" secondItem="eag-c7-2m9" secondAttribute="bottom" id="B5i-r6-7qC"/>
+                            <constraint firstAttribute="bottom" secondItem="97i-Dh-zAe" secondAttribute="bottom" id="C3G-6q-bYQ" userLabel="Background_Bottom"/>
+                            <constraint firstItem="y2n-pR-Wb3" firstAttribute="top" secondItem="eag-c7-2m9" secondAttribute="top" id="GHa-DH-cOk"/>
+                            <constraint firstItem="KHh-yg-5SG" firstAttribute="centerX" secondItem="psY-Wi-Ajr" secondAttribute="centerX" id="GXt-z9-zwy"/>
+                            <constraint firstItem="8bw-Wg-FWk" firstAttribute="bottom" secondItem="KHh-yg-5SG" secondAttribute="bottom" id="N6E-Si-X23"/>
+                            <constraint firstItem="8bw-Wg-FWk" firstAttribute="leading" secondItem="xja-D5-kz4" secondAttribute="leading" constant="72" id="PA8-nn-CXl"/>
+                            <constraint firstItem="97i-Dh-zAe" firstAttribute="leading" secondItem="xja-D5-kz4" secondAttribute="leading" id="Q2G-d1-heW"/>
+                            <constraint firstItem="KHh-yg-5SG" firstAttribute="top" secondItem="xja-D5-kz4" secondAttribute="top" constant="40" id="RpN-H1-RGh"/>
+                            <constraint firstItem="y2n-pR-Wb3" firstAttribute="trailing" secondItem="xja-D5-kz4" secondAttribute="trailing" id="UEQ-5B-hBM"/>
+                            <constraint firstItem="KHh-yg-5SG" firstAttribute="centerX" secondItem="psY-Wi-Ajr" secondAttribute="centerX" id="Zxn-MQ-FQJ"/>
+                            <constraint firstItem="KHh-yg-5SG" firstAttribute="centerX" secondItem="psY-Wi-Ajr" secondAttribute="centerX" id="aZw-0T-eun"/>
+                            <constraint firstItem="y2n-pR-Wb3" firstAttribute="trailing" secondItem="xja-D5-kz4" secondAttribute="trailing" id="dyD-mI-4nx"/>
+                            <constraint firstItem="8bw-Wg-FWk" firstAttribute="top" secondItem="xja-D5-kz4" secondAttribute="top" constant="40" id="dyK-xt-faE"/>
+                            <constraint firstItem="97i-Dh-zAe" firstAttribute="trailing" secondItem="xja-D5-kz4" secondAttribute="trailing" id="gw4-g4-kAP"/>
+                            <constraint firstItem="y2n-pR-Wb3" firstAttribute="bottom" secondItem="eag-c7-2m9" secondAttribute="bottom" id="j28-lz-v8i"/>
+                            <constraint firstItem="97i-Dh-zAe" firstAttribute="top" secondItem="psY-Wi-Ajr" secondAttribute="top" id="mHB-dC-uNd"/>
+                            <constraint firstItem="KHh-yg-5SG" firstAttribute="top" secondItem="xja-D5-kz4" secondAttribute="top" constant="40" id="nEL-EK-6DK"/>
+                            <constraint firstItem="eag-c7-2m9" firstAttribute="centerX" secondItem="psY-Wi-Ajr" secondAttribute="centerX" id="vbf-CZ-FsA"/>
+                            <constraint firstItem="eag-c7-2m9" firstAttribute="trailing" secondItem="xja-D5-kz4" secondAttribute="trailing" id="wDn-Ry-M3B"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="AEE-hF-hbF" appends="YES" id="Yaq-se-aH9"/>
+                            <outletCollection property="gestureRecognizers" destination="O1Y-fe-yla" appends="YES" id="r6Z-9Q-ctL"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundGif" destination="97i-Dh-zAe" id="KNz-RY-l9l"/>
+                        <outlet property="exerciseLabel" destination="1dd-3P-pdx" id="k7t-go-NjA"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1579" y="137"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4k6-as-4Gr"/>
-        <segue reference="Jcy-bm-wlm"/>
-        <segue reference="JsO-be-T1s"/>
-        <segue reference="YOo-2f-A37"/>
+        <segue reference="F4j-gR-FvL"/>
+        <segue reference="6gy-Fc-g35"/>
+        <segue reference="5oG-sS-SoP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="31313131" width="1656" height="3584"/>
-        <image name="Banner_2" width="750" height="550"/>
+        <image name="Box" width="300" height="100"/>
+        <image name="Header" width="524" height="291.33334350585938"/>
         <image name="New Banner" width="750" height="550"/>
         <image name="New_Data_BG" width="1656" height="3584"/>
-        <image name="new_box" width="200" height="100"/>
+        <image name="SignUp_Heading" width="750" height="550"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
