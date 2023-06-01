@@ -205,7 +205,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWb-Od-9jj">
-                                <rect key="frame" x="29" y="70" width="111" height="67"/>
+                                <rect key="frame" x="20" y="209" width="111" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="User Data"/>
@@ -214,7 +214,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUf-i2-6Oh">
-                                <rect key="frame" x="187" y="86" width="163" height="35"/>
+                                <rect key="frame" x="20" y="296" width="163" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Generate Workout"/>
@@ -223,7 +223,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAM-4w-Hjh">
-                                <rect key="frame" x="70" y="664" width="275.66666666666674" height="47.666666666666686"/>
+                                <rect key="frame" x="78" y="800" width="275.66666666666674" height="47.666666666666686"/>
                                 <color key="tintColor" red="0.4549019608" green="0.44705882349999998" blue="0.82352941180000006" alpha="0.98603062909999994" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled">
@@ -240,6 +240,17 @@
                                     <segue destination="MQi-3T-7Bo" kind="presentation" identifier="startWorkout" modalPresentationStyle="fullScreen" id="kVK-uc-FSL"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Te3-FT-aWF">
+                                <rect key="frame" x="139" y="225" width="263" height="330"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Next Workout: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWG-BY-etT">
+                                <rect key="frame" x="51" y="103" width="246" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RsM-Hw-JMq"/>
                         <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -272,7 +283,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="137" y="137"/>
+            <point key="canvasLocation" x="136.74418604651163" y="136.48068669527899"/>
         </scene>
         <!--Rest Screen-->
         <scene sceneID="lpI-Tv-8z3">
@@ -341,7 +352,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="430" height="218.66666666666666"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="New Banner" translatesAutoresizingMaskIntoConstraints="NO" id="qao-kX-0Z4">
-                                                <rect key="frame" x="47.333333333333343" y="8.6666666666666714" width="335.33333333333326" height="201"/>
+                                                <rect key="frame" x="47.333333333333343" y="8.6666666666666714" width="335.33333333333326" height="201.33333333333331"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="qao-kX-0Z4" secondAttribute="height" multiplier="342:205" id="vPn-R3-OCz"/>
                                                 </constraints>
@@ -437,7 +448,7 @@
                                         <rect key="frame" x="0.0" y="775.33333333333337" width="430" height="97.666666666666629"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wY9-Sr-Siq">
-                                                <rect key="frame" x="95" y="28.666666666666629" width="240" height="40"/>
+                                                <rect key="frame" x="95" y="29" width="240" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="200-6R-yAP">
                                                         <rect key="frame" x="8" y="11.666666666666741" width="157.33333333333334" height="17.333333333333329"/>
@@ -670,11 +681,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="New_Data_BG" translatesAutoresizingMaskIntoConstraints="NO" id="FR9-rc-VzS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3cN-3v-acW" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="333" width="375" height="358"/>
+                                <rect key="frame" x="22" y="223" width="388" height="394"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -698,7 +709,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1218.4000000000001" y="136.69950738916256"/>
+            <point key="canvasLocation" x="-1219.5348837209301" y="136.48068669527899"/>
         </scene>
         <!--Training Session-->
         <scene sceneID="YM8-T1-oQB">
@@ -833,10 +844,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4k6-as-4Gr"/>
-        <segue reference="mca-Ta-qCW"/>
-        <segue reference="AJZ-6Y-XD8"/>
-        <segue reference="YOo-2f-A37"/>
+        <segue reference="F4j-gR-FvL"/>
+        <segue reference="bP4-OR-00x"/>
+        <segue reference="kVK-uc-FSL"/>
+        <segue reference="mci-Yr-EuR"/>
+        <segue reference="5oG-sS-SoP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="31313131" width="1656" height="3584"/>

@@ -26,7 +26,6 @@
 		8C19AC8C29526D2F00AC572F /* NutritionStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19AC8B29526D2F00AC572F /* NutritionStats.swift */; };
 		8C19AC8E29526D3C00AC572F /* TrainingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19AC8D29526D3C00AC572F /* TrainingSession.swift */; };
 		8C19AC9029526D4600AC572F /* Rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19AC8F29526D4600AC572F /* Rest.swift */; };
-		8C19AC94295274A400AC572F /* training_in_session.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8C19AC93295274A400AC572F /* training_in_session.gif */; };
 		8C19AC9C29537D3800AC572F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C19AC552952674200AC572F /* Assets.xcassets */; };
 		8C2FA9512961175700E6F8BE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2FA9502961175700E6F8BE /* Constants.swift */; };
 		8C3EBF1829A1C58C00F6CB66 /* background_gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8C3EBF1729A1C58B00F6CB66 /* background_gif.gif */; };
@@ -34,6 +33,8 @@
 		8C5DBFA6297C927C003B23E9 /* GenerateWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5DBFA5297C927C003B23E9 /* GenerateWorkout.swift */; };
 		8C66728029647B0B00C638CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C66727F29647B0B00C638CA /* GoogleService-Info.plist */; };
 		8C6CECFB29732A5C0087E36E /* EnterUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6CECFA29732A5C0087E36E /* EnterUserInfo.swift */; };
+		8CAE90962A280EDF009D6E69 /* new_background.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8CAE90952A280EDF009D6E69 /* new_background.gif */; };
+		8CAE909B2A281693009D6E69 /* gif.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8CAE909A2A281693009D6E69 /* gif.mp4 */; };
 		8CD14A802970DC9B00E01BC6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD14A7F2970DC9B00E01BC6 /* LoginViewController.swift */; };
 		8CD14A822970DD0300E01BC6 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD14A812970DD0300E01BC6 /* SignUpController.swift */; };
 		8CDA1608299AD7A400464B6C /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDA1607299AD7A400464B6C /* Session.swift */; };
@@ -89,13 +90,14 @@
 		8C19AC8B29526D2F00AC572F /* NutritionStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionStats.swift; sourceTree = "<group>"; };
 		8C19AC8D29526D3C00AC572F /* TrainingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSession.swift; sourceTree = "<group>"; };
 		8C19AC8F29526D4600AC572F /* Rest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rest.swift; sourceTree = "<group>"; };
-		8C19AC93295274A400AC572F /* training_in_session.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = training_in_session.gif; sourceTree = "<group>"; };
 		8C2FA9502961175700E6F8BE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8C3EBF1729A1C58B00F6CB66 /* background_gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = background_gif.gif; sourceTree = "<group>"; };
 		8C5DBFA0297B19EB003B23E9 /* ExerciseGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGenerator.swift; sourceTree = "<group>"; };
 		8C5DBFA5297C927C003B23E9 /* GenerateWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateWorkout.swift; sourceTree = "<group>"; };
 		8C66727F29647B0B00C638CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C6CECFA29732A5C0087E36E /* EnterUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUserInfo.swift; sourceTree = "<group>"; };
+		8CAE90952A280EDF009D6E69 /* new_background.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = new_background.gif; sourceTree = "<group>"; };
+		8CAE909A2A281693009D6E69 /* gif.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = gif.mp4; sourceTree = "<group>"; };
 		8CD14A7F2970DC9B00E01BC6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8CD14A812970DD0300E01BC6 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		8CDA1607299AD7A400464B6C /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -248,8 +250,9 @@
 				8C5DBFA5297C927C003B23E9 /* GenerateWorkout.swift */,
 				8CD14A7F2970DC9B00E01BC6 /* LoginViewController.swift */,
 				8CD14A812970DD0300E01BC6 /* SignUpController.swift */,
-				8C19AC93295274A400AC572F /* training_in_session.gif */,
 				8C3EBF1729A1C58B00F6CB66 /* background_gif.gif */,
+				8CAE90952A280EDF009D6E69 /* new_background.gif */,
+				8CAE909A2A281693009D6E69 /* gif.mp4 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -374,9 +377,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C19AC94295274A400AC572F /* training_in_session.gif in Resources */,
+				8CAE909B2A281693009D6E69 /* gif.mp4 in Resources */,
 				8C19AC592952674200AC572F /* LaunchScreen.storyboard in Resources */,
 				8C19AC542952674100AC572F /* Main.storyboard in Resources */,
+				8CAE90962A280EDF009D6E69 /* new_background.gif in Resources */,
 				8C19AC9C29537D3800AC572F /* Assets.xcassets in Resources */,
 				8C3EBF1829A1C58C00F6CB66 /* background_gif.gif in Resources */,
 				8C66728029647B0B00C638CA /* GoogleService-Info.plist in Resources */,
@@ -714,6 +718,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -743,6 +748,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

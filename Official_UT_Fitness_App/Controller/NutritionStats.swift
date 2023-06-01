@@ -75,7 +75,7 @@ class NutritionStats: UIViewController {
         
         //CHANGE THIS CODE
         var entries: [PieChartDataEntry] = Array()
-        entries.append(PieChartDataEntry(value: foodWizard.macroArray[0], label: "Protein"))
+        entries.append(PieChartDataEntry(value: 1, label: "Protein"))
         entries.append(PieChartDataEntry(value: foodWizard.macroArray[1], label: "Carbohydrates"))
         entries.append(PieChartDataEntry(value: foodWizard.macroArray[2], label: "Fats"))
         
@@ -86,7 +86,7 @@ class NutritionStats: UIViewController {
         let c3 = NSUIColor(red: 171, green: 71, blue: 188)
         
         dataSet.colors = [c1, c2, c3]
-        dataSet.drawValuesEnabled = false
+        dataSet.valueFont = UIFont(name: "Verdana", size: 25)!
         
         pieView.data = PieChartData(dataSet: dataSet)
     }
