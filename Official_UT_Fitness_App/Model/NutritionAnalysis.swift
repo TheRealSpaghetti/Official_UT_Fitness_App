@@ -35,18 +35,18 @@ struct NutrientAnalysis{
             genderMult = 0.9
         }
         
-        if(goal == 2){                 //Gain weight
-            macroArray[0] = 0.20       //Protein
-            macroArray[1] = 0.45       //Carbs
-            macroArray[2] = 0.25       //Fats
-        } else if(goal == 1){          //Maintaining weight
-            macroArray[0] = 0.15
-            macroArray[1] = 0.50
-            macroArray[2] = 0.25
-        } else {                       //Losing weight
-            macroArray[0] = 0.15
-            macroArray[1] = 0.60
-            macroArray[2] = 0.20
+        if(goal == 2){                 //**Gaining weight**
+            macroArray[0] = 0.20            //Protein
+            macroArray[1] = 0.45            //Carbs
+            macroArray[2] = 0.35            //Fats
+        } else if(goal == 1){          //**Maintaining weight**
+            macroArray[0] = 0.20
+            macroArray[1] = 0.45
+            macroArray[2] = 0.35
+        } else {                       //**Losing weight**
+            macroArray[0] = 0.30
+            macroArray[1] = 0.30
+            macroArray[2] = 0.40
         }
     }
     
@@ -67,21 +67,41 @@ struct NutrientAnalysis{
             genderMult = 0.9
         }
         
-        if(goal == 2){                 //Gain weight
-            macroArray[0] = 0.20       //Protein
-            macroArray[1] = 0.45       //Carbs
-            macroArray[2] = 0.25       //Fats
-        } else if(goal == 1){          //Maintaining weight
-            macroArray[0] = 0.15
-            macroArray[1] = 0.50
-            macroArray[2] = 0.25
-        } else {                       //Losing weight
-            macroArray[0] = 0.15
-            macroArray[1] = 0.60
-            macroArray[2] = 0.20
+        if(goal == 2){                 //**Gaining weight**
+            macroArray[0] = 0.20            //Protein
+            macroArray[1] = 0.45            //Carbs
+            macroArray[2] = 0.35            //Fats
+        } else if(goal == 1){          //**Maintaining weight**
+            macroArray[0] = 0.20
+            macroArray[1] = 0.45
+            macroArray[2] = 0.35
+        } else {                       //**Losing weight**
+            macroArray[0] = 0.30
+            macroArray[1] = 0.30
+            macroArray[2] = 0.40
         }
         
         print("this user is \(self.height)cm tall")
+    }
+    
+    func getHeight() -> Int{
+        return Int(self.height)
+    }
+    
+    func getWeight() -> Int{
+        return Int(self.weight)
+    }
+    
+    func getGender() -> Bool{
+        return Bool(self.male)
+    }
+    
+    func getActivity() -> Int{
+        return Int(self.activity)
+    }
+    
+    func getDiet() -> Int{
+        return Int(self.goal)
     }
     
     func getProtein() -> Int{

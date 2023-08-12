@@ -13,11 +13,19 @@ import Firebase
 class NutritionStats: UIViewController {
     
     let db = Firestore.firestore()
-    @IBOutlet weak var fatsLabel: UILabel!
-    @IBOutlet weak var carbLabel: UILabel!
-    @IBOutlet weak var proteinLabel: UILabel!
-    @IBOutlet weak var calorieLabel: UILabel!
+    
+    @IBOutlet weak var heightLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var activityLabel: UILabel!
+    @IBOutlet weak var phaseLabel: UILabel!
+    
     @IBOutlet var pieView: PieChartView!
+    
+    @IBOutlet weak var proteinLabel: UILabel!
+    @IBOutlet weak var carbLabel: UILabel!
+    @IBOutlet weak var fatsLabel: UILabel!
+    @IBOutlet weak var calorieLabel: UILabel!
     
     //GOALS: 0 - Losing weight, 1 - Maintain weight, 2 - Gain weight
     var foodWizard = NutrientAnalysis(height: 0, weight: 0, goal: 0, male: false, activity: 0, age: 0)
@@ -54,10 +62,51 @@ class NutritionStats: UIViewController {
                             self.foodWizard.updateInfo(height: setHeight, weight: setWeight, goal: setGoal, male: setMale, activity: setActivity, age: setAge)
                             self.setupPieChart()
                             print(foodWizard.getCalories())
-                            //self.calorieLabel.text = String(format: "%.2f" + " kCal", foodWizard.getCalories())
-                            //self.carbLabel.text = "\(foodWizard.getCarbs()) grams"
-                            //self.proteinLabel.text = "\(foodWizard.getProtein()) grams"
-                            //self.fatsLabel.text = "\(foodWizard.getFats()) grams"
+                           
+                            
+                            //Prints biometric data onto respective labels
+                            self.heightLabel.text = "\(foodWizard.getHeight()) cm"
+                            self.weightLabel.text = "\(foodWizard.getWeight()) cm"
+                            
+                            if(foodWizard.getGender() == true){
+                                self.genderLabel.text = "Male"
+                            } else {
+                                self.genderLabel.text = "Female"
+                            }
+                            
+                            var activityLevel = foodWizard.getActivity()
+                            
+                            switch activityLevel {
+                            case 1:
+                                self.activityLabel.text = "Stationary"
+                            case 2:
+                                self.activityLabel.text = "Sedentary"
+                            case 3:
+                                self.activityLabel.text = "Moderate"
+                                
+                            case 4:
+                                self.activityLabel.text = "Vigorously"
+                                
+                            case 5:
+                                self.activityLabel.text = "Extreme"
+
+                            default:
+                                print("Error, can't get activity data")
+                            }
+                            
+                            if(foodWizard.getDiet() == 0){
+                                self.phaseLabel.text = "Cutting"
+                            } else if (foodWizard.getDiet() == 1) {
+                                self.phaseLabel.text = "Maintaining"
+                            } else {
+                                self.phaseLabel.text = "Bulking"
+                            }
+                            
+                            //Prints macros data onto respective labels
+                            self.proteinLabel.text = "\(foodWizard.getProtein()) grams"
+                            self.carbLabel.text = "\(foodWizard.getCarbs()) grams"
+                            self.fatsLabel.text = "\(foodWizard.getFats()) grams"
+                            self.calorieLabel.text = String(format: "%.1f" + " kCal", foodWizard.getCalories())
                         }
                     }
                 }
@@ -75,9 +124,11 @@ class NutritionStats: UIViewController {
         
         //CHANGE THIS CODE
         var entries: [PieChartDataEntry] = Array()
-        entries.append(PieChartDataEntry(value: 1, label: "Protein"))
-        entries.append(PieChartDataEntry(value: foodWizard.macroArray[1], label: "Carbohydrates"))
+        entries.append(PieChartDataEntry(value: foodWizard.macroArray[0], label: "Protein"))
+        entries.append(PieChartDataEntry(value: foodWizard.macroArray[1], label: "Carbs"))
         entries.append(PieChartDataEntry(value: foodWizard.macroArray[2], label: "Fats"))
+        
+        print("Protein: \(foodWizard.macroArray[0]), Carbs: \(foodWizard.macroArray[1]), Fats: \(foodWizard.macroArray[2])")
         
         //Code Segment: Sets color of each area of the pie chart
         let dataSet = PieChartDataSet(entries: entries, label: "")
@@ -85,9 +136,9 @@ class NutritionStats: UIViewController {
         let c2 = NSUIColor(red: 57, green: 240, blue: 119)
         let c3 = NSUIColor(red: 171, green: 71, blue: 188)
         
+        //Sets up the data on the pie chart
         dataSet.colors = [c1, c2, c3]
-        dataSet.valueFont = UIFont(name: "Verdana", size: 25)!
-        
+        dataSet.valueFont = UIFont(name: "Helvetica", size: 12)!
         pieView.data = PieChartData(dataSet: dataSet)
     }
     

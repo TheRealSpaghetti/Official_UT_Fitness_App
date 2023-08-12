@@ -42,6 +42,8 @@ class TrainingSession: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //exerciseLabel.font = UIFont(name: "Intro Rust", size: 20)
+        
         //Sets GIF background
         let theURL = Bundle.main.url(forResource:"gif", withExtension: "mp4")
 
@@ -65,6 +67,7 @@ class TrainingSession: UIViewController {
         let testArray = defaults.object(forKey:"Exercises_Left") as? [Int] ?? [Int]()
         print("Train Screen \(testArray)")
         let infoToLoad = defaults.object(forKey:"Current_Exercise_Info") as? [String] ?? [String]()
+        
         //exerciseLabel.text = infoToLoad[0]
         exerciseLabel.text = "Beep Boops"
         

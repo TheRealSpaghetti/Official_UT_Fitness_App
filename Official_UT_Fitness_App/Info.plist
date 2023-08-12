@@ -2,8 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ui</key>
+	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>introrust-base.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
+		<key>New item</key>
+		<string></string>
+		<key>UIApplicationSupportsTabbedSceneCollection</key>
+		<false/>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
 		<key>UISceneConfigurations</key>
