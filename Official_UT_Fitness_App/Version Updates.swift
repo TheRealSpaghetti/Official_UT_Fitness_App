@@ -21,7 +21,7 @@
     - Update pie chart UI
  */
 
-//Version 1.0 FIRST UPDATE
+//Version 2.0 FIRST UPDATE
 /*
     - Home page shows target muscle groups for next workout
     - Allows users to edit and set custom weights
@@ -31,4 +31,5 @@
 /*
     - Implement graphs that shows user progress (sets, reps, volume)
     - Allow users to fully customize workouts
+    - Generate different programs: Strength, Hypertrophy, Hybrid (Both Strength and Hypertrophy)
  */

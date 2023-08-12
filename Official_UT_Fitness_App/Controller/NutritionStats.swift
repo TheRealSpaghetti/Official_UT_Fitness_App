@@ -74,7 +74,7 @@ class NutritionStats: UIViewController {
                                 self.genderLabel.text = "Female"
                             }
                             
-                            var activityLevel = foodWizard.getActivity()
+                            let activityLevel = foodWizard.getActivity()
                             
                             switch activityLevel {
                             case 1:
@@ -92,12 +92,13 @@ class NutritionStats: UIViewController {
 
                             default:
                                 print("Error, can't get activity data")
+                                print(activityLevel)
                             }
                             
                             if(foodWizard.getDiet() == 0){
                                 self.phaseLabel.text = "Cutting"
                             } else if (foodWizard.getDiet() == 1) {
-                                self.phaseLabel.text = "Maintaining"
+                                self.phaseLabel.text = "Maintain"
                             } else {
                                 self.phaseLabel.text = "Bulking"
                             }

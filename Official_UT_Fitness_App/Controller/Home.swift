@@ -63,7 +63,10 @@ class HomePage: UIViewController {
     }
     
     @IBAction func swipedLeft(_ sender: UISwipeGestureRecognizer) {
-        print("swipe detected")
+        self.performSegue(withIdentifier: "goToNutrition", sender: self)
+    }
+    
+    @IBAction func goToNutrition(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToNutrition", sender: self)
     }
     
