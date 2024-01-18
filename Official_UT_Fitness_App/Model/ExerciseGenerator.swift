@@ -269,17 +269,33 @@ struct ExerciseGenerator{
         let workoutType = Int(workoutNumber)!
         let exerciseCollection: [[String]]
     
+        /*
+         WRITES WORKOUTS TO FIREBASE
+         
+         Notes:
+            - the "documentName" string decides the collection name that is written to Firbase
+              For example, documentName = "SBD_Workout_ + workoutNumber" creates a collection with
+              the name "SBD_Workout_1" that has a list of exercises for the first day of a squat,
+              bench, deadlift workout
+         
+         */
+        
+        //if weekly exercise days is 1 or 2, generate a SBD fullbody workout
         if(activeDays <= 2){
             documentName = "SBD_Workout_" + workoutNumber
             type = "SBD"
             exerciseCollection = self.SBD_Generator(workoutNumber: workoutType)
-            
-        } else if(activeDays == 3 || activeDays == 5 || activeDays == 6){
+        }
+        
+        //if weekly exercise days is 3,5, or 6, generate a PPL workout
+        else if(activeDays == 3 || activeDays == 5 || activeDays == 6){
             documentName = "PPL_Workout_" + workoutNumber
             type = "PPL"
             exerciseCollection = self.PPL_Generator(workoutNumber: workoutType)
+        }
         
-        } else {
+        //if weekly exercise days is 4, generate Push, Pull, Legs, Full Body workout
+        else {
             documentName = "Flex_Workout" + workoutNumber
             type = "Flex"
             exerciseCollection = self.Flex_Generator(workoutNumber: workoutType)
@@ -316,6 +332,9 @@ struct ExerciseGenerator{
     }
 }
 
+
+
+//Function that rounds floats to nearest 2.5 pounds
 infix operator ⌈/⌉*
 
 extension Float {

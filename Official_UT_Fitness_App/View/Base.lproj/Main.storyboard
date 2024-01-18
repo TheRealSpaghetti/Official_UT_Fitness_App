@@ -604,6 +604,7 @@
                     <connections>
                         <outlet property="restBackground" destination="wOy-nN-0mt" id="eeQ-4W-nR2"/>
                         <segue destination="MQi-3T-7Bo" kind="presentation" identifier="backToTraining" modalPresentationStyle="fullScreen" id="mca-Ta-qCW"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToHome" modalPresentationStyle="fullScreen" id="yVB-Zf-lHB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxd-zd-dlZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1268,7 +1269,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bw-Wg-FWk" userLabel="Banner">
                                 <rect key="frame" x="72" y="99" width="249" height="110"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bench Press" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dd-3P-pdx">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bench Press" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dd-3P-pdx">
                                         <rect key="frame" x="28.333333333333329" y="45.333333333333343" width="192.33333333333337" height="39.666666666666657"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="34"/>
                                         <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
@@ -1344,8 +1345,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="4k6-as-4Gr"/>
-        <segue reference="kVK-uc-FSL"/>
-        <segue reference="1jG-1Y-Anp"/>
+        <segue reference="mca-Ta-qCW"/>
+        <segue reference="yVB-Zf-lHB"/>
         <segue reference="5oG-sS-SoP"/>
     </inferredMetricsTieBreakers>
     <resources>

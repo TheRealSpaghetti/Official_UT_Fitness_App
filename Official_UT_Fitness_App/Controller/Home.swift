@@ -70,16 +70,19 @@ class HomePage: UIViewController {
         self.performSegue(withIdentifier: "goToNutrition", sender: self)
     }
     
-    //Starts Workout
+    //START WORKOUT BUTTON
     @IBAction func startWorkout(_ sender: UIButton) {
+        //INITIALIZES STARTWORKOUT SEQUENCE
         
-        //initalizes workout sequence
+        /*1. Set up user defaults to the proper workout day
+             The user default key is ""
+        */
+        
+        
         let defaults = UserDefaults.standard
-        let totalExerciseNumber = defaults.object(forKey:"Total_Exercises") as? Int ?? 0
-        let setsLeft = defaults.object(forKey:"Exercises_Left") as? [Int] ?? [Int]()
         
-        SessionCreator.loadWorkoutSession()
-        SessionCreator.updateSessionUI(indexToReadFrom: (totalExerciseNumber - setsLeft.count))
+        
+
         self.performSegue(withIdentifier: "startWorkout", sender: self)
     }
     

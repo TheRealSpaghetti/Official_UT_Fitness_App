@@ -14,17 +14,23 @@
    - Create App Logo
  */
 
-//Version 1.05 BUG FIXES
+//Version 1.5 BUG FIXES
 /*
     - Fix constraints on new user sign up page
     - Fix constraints on nutritional info page
-    - Update pie chart UI
+ */
+
+//Version 1.6 BACKEND REWORK
+/*
+    - Save the generated workouts locally, and then save to Firebase
+    - Only read from Firebase when users login in from the "LOGIN PAGE"
  */
 
 //Version 2.0 FIRST UPDATE
 /*
     - Home page shows target muscle groups for next workout
     - Allows users to edit and set custom weights
+    - Update pie chart UI
  */
 
 //FUTURE UPDATES...

@@ -13,7 +13,6 @@ class UserInfo {
     
     let db = Firestore.firestore()
     let userEmail = String(Auth.auth().currentUser!.email ?? "no email")
-    
     var height = 0.0
     var weight = 0.0
     var goal = 0
@@ -75,8 +74,9 @@ class UserInfo {
     }
     func generateTrainingPlan(){
         
-        print("here1")
+        print("Model -> UserInfo -> func generateTrainingPlan")
         
+        //Writes Exercise to Firebase
         db.collection("UserData")
             .whereField("email", isEqualTo: userEmail)
             .order(by: "date", descending: true)

@@ -22,12 +22,13 @@ class TrainingSession: UIViewController {
     
     //Elements needed to fetch data & update the UI
     let db = Firestore.firestore()
+    let defaults = UserDefaults.standard
     
     //Elements needed to draw the timer
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
     let strokeIt = CABasicAnimation(keyPath: "strokeEnd")
-    var timeLeft: TimeInterval = 5                         //number of seconds on the timer
+    var timeLeft: TimeInterval = 12                        //number of seconds on the timer
     var rounded: Int {return Int(round(timeLeft))}
     var endTime: Date?
     var timeLabel =  UILabel()
@@ -42,6 +43,17 @@ class TrainingSession: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Uses UserDefaults to make the array that stores the data for the current exercise
+        /*
+         Exercise Array looks like ["Name", "Time to do exercise", "Rest time", "sets", "reps"]
+         */
+        
+        let infoToLoad = defaults.object(forKey:"Current_Exercise_Info") as? [String] ?? [String]()
+        
+        //Initializes time to do exercise on the timer
+        //timeLeft = Double(infoToLoad[1])!
+        
+        print(infoToLoad)
         //exerciseLabel.font = UIFont(name: "Intro Rust", size: 20)
         
         //Sets GIF background
@@ -63,13 +75,12 @@ class TrainingSession: UIViewController {
                 object: avPlayer.currentItem)
         
         //Fetches data from Firebase to display current exercise information
-        let defaults = UserDefaults.standard
         let testArray = defaults.object(forKey:"Exercises_Left") as? [Int] ?? [Int]()
         print("Train Screen \(testArray)")
-        let infoToLoad = defaults.object(forKey:"Current_Exercise_Info") as? [String] ?? [String]()
         
-        //exerciseLabel.text = infoToLoad[0]
-        exerciseLabel.text = "Beep Boops"
+        //Prints current exercise name
+        exerciseLabel.text = "VERY LONG TEXT HERE BLAH BLAH BLAH"
+        print(infoToLoad)
         
         //Creates timer
         drawBgShape()

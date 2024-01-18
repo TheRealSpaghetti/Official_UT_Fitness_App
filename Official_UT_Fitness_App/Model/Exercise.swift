@@ -8,7 +8,6 @@
 import Foundation
 
 struct Exercise{
-    
     let info: [String]
     let maleScale: [Double]
     let femaleScale: [Double]

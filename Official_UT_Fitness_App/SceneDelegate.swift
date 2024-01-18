@@ -20,9 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let userLoginStatus = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
         
             if(userLoginStatus){
-                let home = storyboard.instantiateViewController(withIdentifier: "HomePage") as UIViewController
+                let home = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
                 window.rootViewController = home
-                //change to "HomePage"
+                //Normally, this should be "HomePage"
             } else{
                 let home = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
                 window.rootViewController = home

@@ -1,6 +1,7 @@
 //
 //  Created by Leon Lee on 2022-11-15.
 //
+
 import Foundation
 import UIKit
 //Exercise Structs:
@@ -12,19 +13,19 @@ struct ExerciseLibrary {
     let ChestPrimary = [
         Exercise(information: ["Bench Press", "100", "210", "5" , "5"], maleMult: [0.40, 0.50, 0.75, 1.25, 1.75, 2.00], femaleMult: [0.20, 0.25, 0.50, 0.75, 1.00, 1.50]),
         
-        Exercise(information: ["Dumbbell Bench Press", "45", "90", "8" , "4"], maleMult: [0.15, 0.20, 0.35, 0.50, 0.75, 1.00], femaleMult: [0.075, 0.10, 0.20, 0.30, 0.50, 0.70]),
+        Exercise(information: ["Dumbbell Bench", "45", "90", "8" , "4"], maleMult: [0.15, 0.20, 0.35, 0.50, 0.75, 1.00], femaleMult: [0.075, 0.10, 0.20, 0.30, 0.50, 0.70]),
         
-        Exercise(information: ["Inclined Bench Press", "100", "210", "5" , "5"], maleMult: [0.40, 0.50, 0.75, 1.00, 1.50, 1.75], femaleMult: [0.15, 0.20, 0.40, 0.65, 1.00, 1.40])
+        Exercise(information: ["Inclined Bench", "100", "210", "5" , "5"], maleMult: [0.40, 0.50, 0.75, 1.00, 1.50, 1.75], femaleMult: [0.15, 0.20, 0.40, 0.65, 1.00, 1.40])
     ]
     
     let ChestSecondary = [
         Exercise(information: ["Pec Fly (Machine)", "60", "30", "8" , "4"], maleMult: [0.05, 0.10, 0.25, 0.50, 0.85, 1.35], femaleMult: [0.05, 0.10, 0.15, 0.30, 0.55, 0.80]),
         
-        Exercise(information: ["Cable Chest Fly", "60", "30", "8" , "4"], maleMult: [0.05, 0.10, 0.25, 0.50, 0.85, 1.35], femaleMult: [0.05, 0.10, 0.15, 0.30, 0.55, 0.80]),
+        Exercise(information: ["Cable Fly", "60", "30", "8" , "4"], maleMult: [0.05, 0.10, 0.25, 0.50, 0.85, 1.35], femaleMult: [0.05, 0.10, 0.15, 0.30, 0.55, 0.80]),
     ]
     
     let ChestTertiary = [
-        Exercise(information: ["Cable Chest Fly (Lower)", "60", "30", "10" , "3"], maleMult: [0.05, 0.10, 0.15, 0.25, 0.30, 0.40], femaleMult: [0.05, 0.10, 0.15, 0.20, 0.25, 0.30]),
+        Exercise(information: ["Cable Fly (Lower)", "60", "30", "10" , "3"], maleMult: [0.05, 0.10, 0.15, 0.25, 0.30, 0.40], femaleMult: [0.05, 0.10, 0.15, 0.20, 0.25, 0.30]),
         
         Exercise(information: ["Tricep Dips (Assisted)", "60", "30", "10" , "3"], maleMult: [0.85, 0.70, 0.50, 0.25, 0.10, 0.00], femaleMult: [0.85, 0.70, 0.50, 0.30, 0.15, 0.00])
     ]

@@ -23,7 +23,7 @@ class RestScreen: UIViewController {
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
     let strokeIt = CABasicAnimation(keyPath: "strokeEnd")
-    var timeLeft: TimeInterval = 30                         //number of seconds of rest
+    var timeLeft: TimeInterval = 3                         //number of seconds of rest
     var rounded: Int {return Int(round(timeLeft))}
     var endTime: Date?
     var timeLabel =  UILabel()
@@ -34,27 +34,31 @@ class RestScreen: UIViewController {
     var tapCount = 0
     var holdCount = 0
     var exerciseSkipped = false
-
+    
+    //Elements for current exercise Session
+    let defaults = UserDefaults.standard
+    let SessionCreator = Session()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Sets GIF background
         let theURL = Bundle.main.url(forResource:"gif", withExtension: "mp4")
-
+        
         avPlayer = AVPlayer(url: theURL!)
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
         avPlayerLayer.videoGravity = .resizeAspectFill
         avPlayer.volume = 0
         avPlayer.actionAtItemEnd = .none
-
+        
         avPlayerLayer.frame = view.layer.bounds
         view.backgroundColor = .clear
         view.layer.insertSublayer(avPlayerLayer, at: 0)
-
+        
         NotificationCenter.default.addObserver(self,
-                selector: #selector(playerItemDidReachEnd(notification:)),
-                name: .AVPlayerItemDidPlayToEndTime,
-                object: avPlayer.currentItem)
+                                               selector: #selector(playerItemDidReachEnd(notification:)),
+                                               name: .AVPlayerItemDidPlayToEndTime,
+                                               object: avPlayer.currentItem)
         
         //Creates timer
         drawBgShape()
@@ -69,21 +73,21 @@ class RestScreen: UIViewController {
     }
     
     @objc func playerItemDidReachEnd(notification: Notification) {
-         let p: AVPlayerItem = notification.object as! AVPlayerItem
-         p.seek(to: .zero)
-     }
-
-     override func viewDidAppear(_ animated: Bool) {
-         super.viewDidAppear(animated)
-         avPlayer.play()
-         paused = false
-     }
-
-     override func viewDidDisappear(_ animated: Bool) {
-         super.viewDidDisappear(animated)
-         avPlayer.pause()
-         paused = true
-     }
+        let p: AVPlayerItem = notification.object as! AVPlayerItem
+        p.seek(to: .zero)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        avPlayer.play()
+        paused = false
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        avPlayer.pause()
+        paused = true
+    }
     
     @objc func startTimer(){
         if(tapCount == 0){
@@ -104,24 +108,22 @@ class RestScreen: UIViewController {
         }
     }
     
+    //Defines what happens if the user skips the rest
     @objc func skipRest(){
         if(holdCount == 0){
             print("held detected")
             exerciseSkipped = true
+            
             //Allows users to finish the set early before the timer ends
-            if(exitStatus){
-                self.performSegue(withIdentifier: "goToHome", sender: self)
-            } else {
-                self.performSegue(withIdentifier: "backToTraining", sender: self)
-            }
+            endTimerAction()
             holdCount += 1
         }
     }
-
+    
     func drawBgShape() {
         //Creates the basic animation object to animate the strokeEnd
         bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY), radius:
-            150, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).cgPath
+                                            150, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).cgPath
         bgShapeLayer.strokeColor = UIColor.darkGray.cgColor
         bgShapeLayer.fillColor = UIColor.clear.cgColor
         bgShapeLayer.lineWidth = 15
@@ -129,41 +131,14 @@ class RestScreen: UIViewController {
     }
     
     @objc func updateTime() {
-        if timeLeft > 0 {
+        if timeLeft > 0 {                                           //When timer is still active
             timeLeft = endTime?.timeIntervalSinceNow ?? 0
             timeLabel.text = timeStringConverter.getString(timeData: rounded)
-        } else {
-            timeLabel.text = "00:00"
-            timer.invalidate()
-
-            if(exerciseSkipped == false){
-                let defaults = UserDefaults.standard
-                var testArray = defaults.object(forKey:"Exercises_Left") as? [Int] ?? [Int]()
-                
-                if(testArray.isEmpty){
-                    print("case 1\n")
-                    print("array is empty")
-                    exitStatus = true
-                } else if(testArray[0] != 0){
-                    print("case 2\n")
-                    testArray[0] -= 1
-                } else if(testArray[0] == 0){
-                    //code to finish workout because necessary condition was met
-                    print("case 3\n")
-                    testArray.removeFirst()
-                }
-                defaults.set(testArray, forKey: "Exercises_Left")
-                
-                if(exitStatus){
-                    //show reward screen
-                    self.performSegue(withIdentifier: "goToHome", sender: self)
-                } else {
-                    self.performSegue(withIdentifier: "backToTraining", sender: self)
-                }
-            }
+        } else {                                                    //What happens once timer
+            endTimerAction()
         }
     }
-    
+        
     func addTimeLabel() {
         timeLabel = UILabel(frame: CGRect(x: view.frame.midX-50 ,y: view.frame.midY-25, width: 100, height: 50))
         timeLabel.textAlignment = .center
@@ -172,15 +147,58 @@ class RestScreen: UIViewController {
         timeLabel.font = timeLabel.font.withSize(35)
         view.addSubview(timeLabel)
     }
-    
+        
     func drawTimeLeftShape() {
-        timeLeftShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY), radius:
-            150, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).cgPath
-        let timerColor = UIColor(hex: "#2cebe0ff")!
-        timeLeftShapeLayer.strokeColor = timerColor.cgColor
-        timeLeftShapeLayer.fillColor = UIColor.clear.cgColor
-        timeLeftShapeLayer.lineWidth = 15
-        timeLeftShapeLayer.lineCap = CAShapeLayerLineCap.round
-        view.layer.addSublayer(timeLeftShapeLayer)
+        timeLeftShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY), radius: 150, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).cgPath
+            let timerColor = UIColor(hex: "#2cebe0ff")!
+            timeLeftShapeLayer.strokeColor = timerColor.cgColor
+            timeLeftShapeLayer.fillColor = UIColor.clear.cgColor
+            timeLeftShapeLayer.lineWidth = 15
+            timeLeftShapeLayer.lineCap = CAShapeLayerLineCap.round
+            view.layer.addSublayer(timeLeftShapeLayer)
+        }
+    
+    //Defines what happens when the timer ends
+    func endTimerAction(){
+        timeLabel.text = "00:00"
+        timer.invalidate()
+    
+        var testArray = defaults.object(forKey:"Exercises_Left") as? [Int] ?? [Int]()
+        //Decrements number of exercises left
+        
+        if(testArray.isEmpty){
+            print("case 1\n")
+            /*
+            Execute workout finish logic
+            1. updates current workout to Firebase
+            2. update user default to next workout
+            3. return to home page
+            4. ping pong is great
+             
+            OLD NOTES:
+            //Prepares next workout session
+            //SessionCreator.loadWorkoutSession()
+            //Sets exitStatus to true so it goes back to home screen
+             */
+            exitStatus = true
+        } else if(testArray[0] != 0){
+            print("case 2\n")
+            testArray[0] -= 1
+            defaults.set(testArray, forKey: "Exercises_Left")
+        } else if(testArray[0] == 0){
+            //code to finish workout because necessary condition was met
+            print("case 3\n")
+            testArray.removeFirst()
+            defaults.set(testArray, forKey: "Exercises_Left")
+        }
+            
+        if(exitStatus){
+            //show reward screen then goes back to home screen
+            self.performSegue(withIdentifier: "goToHome", sender: self)
+        } else {
+            self.performSegue(withIdentifier: "backToTraining", sender: self)
+        }
     }
 }
+
+

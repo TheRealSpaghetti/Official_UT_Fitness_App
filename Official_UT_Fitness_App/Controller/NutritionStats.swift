@@ -66,7 +66,7 @@ class NutritionStats: UIViewController {
                             
                             //Prints biometric data onto respective labels
                             self.heightLabel.text = "\(foodWizard.getHeight()) cm"
-                            self.weightLabel.text = "\(foodWizard.getWeight()) cm"
+                            self.weightLabel.text = "\(foodWizard.getWeight()) kg"
                             
                             if(foodWizard.getGender() == true){
                                 self.genderLabel.text = "Male"
